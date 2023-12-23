@@ -1,0 +1,1 @@
+először nyugtató. Saját érdekedben

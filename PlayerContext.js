@@ -16,7 +16,7 @@ const PlayerContext = ({ children }) => {
                     <Pressable onPress={() => setModalVisible(true)}>
                         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: "#F9F9F9", paddingHorizontal: 25, paddingVertical: 12, borderRadius: 18, marginHorizontal: 5 }}>
                             <View style={{ flexDirection: "row", alignItems: "center", gap: 11 }}>
-                                <View style={{ backgroundColor: "#1e40af", width: 48, height: 48, borderRadius: "50%", justifyContent: "center", alignItems: "center" }}>
+                                <View style={{ backgroundColor: "#1e40af", width: 48, height: 48, borderRadius: 50, justifyContent: "center", alignItems: "center" }}>
                                     <Text style={{ color: "#60a5fa", fontSize: 20, fontWeight: "bold" }}>{currentTrack?.title.charAt(0)}</Text>
                                 </View>
                                 <View>

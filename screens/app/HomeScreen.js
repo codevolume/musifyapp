@@ -1,4 +1,5 @@
-import { SafeAreaView, View, Text, ScrollView, FlatList } from "react-native";
+import { SafeAreaView, View, Text, FlatList } from "react-native";
+import { ScrollView } from 'react-native-virtualized-view';
 import Svg, { Path } from "react-native-svg";
 import React, { useContext } from "react";
 import Item from "../../components/Item";
@@ -18,7 +19,7 @@ const HomeScreen = () => {
                 {/* Header */}
                 <View style={{ flexDirection: "row", width: "100%", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center", paddingTop: 20 }}>
                     <Text style={{ fontSize: 24, fontWeight: "bold", color: "#202020" }}>Good Afternoon!</Text>
-                    <View style={{ backgroundColor: "#0b3b2c", width: 48, height: 48, borderRadius: "50%", alignItems: "center", justifyContent: "center" }}>
+                    <View style={{ backgroundColor: "#0b3b2c", width: 48, height: 48, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>
                         <Text style={{ fontSize: 20, fontWeight: "bold", color: "#1fd8a4" }}>Sz</Text>
                     </View>
                 </View>

@@ -21,9 +21,7 @@ function BottomTabs() {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    borderTopWidth: 0,
-                    height: 83,
-                    size: 48,
+/*                     borderTopWidth: 0, */
                 },
             }}>
             <Tab.Screen

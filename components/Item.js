@@ -1,13 +1,13 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, Linking } from "react-native";
 import React, { useContext } from "react";
 import { Player } from "../PlayerContext";
 
 const Item = ({ item, onPress, isPlaying }) => {
     const { currentTrack, setCurrentTrack } = useContext(Player);
-    const handlePress = () => {
-      setCurrentTrack(item);
-      console.log(item)
-      onPress(item)
+    const handlePress =  () => {
+        setCurrentTrack(item);
+        console.log(item)
+        onPress(item)
     }
 
 
@@ -18,7 +18,7 @@ const Item = ({ item, onPress, isPlaying }) => {
                     <Text style={{ color: "#60a5fa", fontSize: 20, fontWeight: "bold" }}>{item.title.charAt(0)}</Text>
                 </View>
                 <View>
-                    <Text style={{ fontSize: 16, fontWeight: "500", color: "#202020" }}>{item.title}</Text>
+                    <Text style={{ fontSize: 16, fontWeight: "500", color: "#202020", width: 180 }} numberOfLines={1}>{item.title}</Text>
                     <Text style={{ fontSize: 12, color: "#646464" }}>{item.singer}</Text>
                 </View>
             </View>

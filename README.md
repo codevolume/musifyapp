@@ -6,7 +6,18 @@
 
 ###
 
-<p align="left">The backend uses an unofficial youtube API.<br><br>Opportunities:<br>Streaming<br>Offline music listening</p>
+<p align="left">The backend uses an unofficial youtube API.</p>
+
+###
+
+<h2 align="left">Features</h2>
+
+###
+
+<ul>
+  <li>Streaming</li>
+  <li>Offline music listening</li>
+</ul>
 
 ###
 

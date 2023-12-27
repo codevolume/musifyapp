@@ -1,8 +1,17 @@
 import { View, Text, SafeAreaView, TextInput } from "react-native";
 import Svg, { Path, Circle } from "react-native-svg";
 import React from "react";
+import {search, suggest} from "../../ytAPI/index"
 
 const SearchScreen = () => {
+    let searchSuggest = (text) => {
+        suggest(text).then((suggestionArray) => {
+            //string array, search suggestions (kinda works)
+            console.log(suggestionArray);
+        });
+        
+    }
+
     return (
         <View style={{ flex: 1, backgroundColor: "#fff" }}>
             <SafeAreaView>
@@ -14,7 +23,7 @@ const SearchScreen = () => {
                             <Path d="M20 20L17 17" stroke="#646464" stroke-width="2" stroke-linecap="round" />
                         </Svg>
 
-                        <TextInput placeholder="Search for something..."  style={{fontSize: 14, color: "#646464"}}/>
+                        <TextInput placeholder="Search for something..." onChangeText={searchSuggest}  style={{fontSize: 14, color: "#646464"}}/>
 
                     </View>
 

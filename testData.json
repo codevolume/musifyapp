@@ -1,38 +1,47 @@
 [
 
     {
+        "id": 1,
         "singer": "VZS",
         "title": "Jamaica Pt. 1"
     },
     {
+        "id": 2,
         "singer": "Pogány Induló",
         "title": "Pogi Hip-Hop"
     },
     {
+        "id": 3,
         "singer": "Grasa",
         "title": "Tilidin"
     },
     {
+        "id": 4,
         "singer": "Ekhoe, YaBalka",
         "title": "My eyes only"
     },
     {
+        "id": 5,
         "singer": "Ótvar Pestis, Pogány Induló",
         "title": "vihar előtt ft. Pogány induló"
     },
     {
+        "id": 6,
         "singer": "Manuel, Ekhoe",
         "title": "Legenda (feat. Ekhoe)"
     },
     {
+        "id": 7,
         "singer": "Pop Smoke",
         "title": "Dior"
     },
     {
+        "id": 8,
         "singer": "VZS",
         "title": "Gurulgatok"
     },
     {
+        "id": 9,
         "singer": "Bruno X Spacc",
         "title": "Ördög Nórika"
     }

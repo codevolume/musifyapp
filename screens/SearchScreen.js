@@ -1,8 +1,8 @@
 import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard } from "react-native";
 import Svg, { Path, Circle } from "react-native-svg";
 import React, { useState, useEffect } from "react";
-import { search, suggest } from "../../ytAPI/index";
-import SearchItem from "../../components/SearchItem";
+import { search, suggest } from "../ytAPI/index";
+import SearchItem from "../components/SearchItem";
 
 const SearchScreen = () => {
     const [suggestions, setSuggestions] = useState([]);

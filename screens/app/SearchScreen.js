@@ -7,6 +7,7 @@ import SearchItem from "../../components/SearchItem";
 const SearchScreen = () => {
     const [suggestions, setSuggestions] = useState([]);
     const [keyboardStatus, setKeyboardStatus] = useState(false);
+    const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         const opened = Keyboard.addListener('keyboardDidShow', () => setKeyboardStatus(true))
@@ -19,7 +20,12 @@ const SearchScreen = () => {
                 setSuggestions([]);
             } else setSuggestions(suggestionArray);
         });
+        setSearchText(text);
     };
+
+    let submitSearch = () => {
+        search(searchText);
+    }
 
     return (
         <View style={{ flex: 1, backgroundColor: "#fff" }}>
@@ -31,7 +37,7 @@ const SearchScreen = () => {
                             <Path d="M20 20L17 17" stroke="#646464" stroke-width="2" stroke-linecap="round" />
                         </Svg>
 
-                        <TextInput placeholder="Search for something..."     onChangeText={searchSuggest} style={{ fontSize: 16, color: "#646464" }} />
+                        <TextInput placeholder="Search for something..."     onChangeText={searchSuggest} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: "#646464" }} />
                     </View>
 
                     <View style={{ backgroundColor: "#0b3b2c", width: 48, height: 48, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>

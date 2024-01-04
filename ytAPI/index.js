@@ -2,6 +2,8 @@ const key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30";
 const visitorID = "Cgtrd3R2TjJybThLZyiyorGsBjIKCgJIVRIEEgAgOg%3D%3D";
 let previousResponse = "";
 
+import digestResultResponse from "./parser";
+
 let suggestFormatter = (response) => {
     return new Promise((resolved) => {
         try {
@@ -98,8 +100,9 @@ let search = (query) => {
         "method": "POST",
         "mode": "cors",
         "credentials": "include"
-    }).then((response) => {
-        console.log(JSON.parse(response.text()));
+    }).then(async (response) => {
+       
+        console.log(digestResultResponse(await response.json()));
     });
 }
 

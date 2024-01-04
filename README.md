@@ -1,5 +1,7 @@
 <h1 align="center">MUSIFY</h1>
 
+ <img src="https://raw.githubusercontent.com/codevolume/musifyapp/master/cover.png"/>
+
 ###
 
 <h2 align="left">Free alternative of Spotify</h2>

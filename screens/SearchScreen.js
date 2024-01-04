@@ -24,7 +24,7 @@ const SearchScreen = () => {
     };
 
     let submitSearch = () => {
-        search(searchText);
+        search(searchText)
     }
 
     return (

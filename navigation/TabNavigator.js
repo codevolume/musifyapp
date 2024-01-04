@@ -1,9 +1,9 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 
-import HomeScreen from "../screens/app/HomeScreen";
-import SearchScreen from "../screens/app/SearchScreen";
-import LibaryScreen from "../screens/app/LibaryScreen";
+import HomeScreen from "../screens/HomeScreen";
+import SearchScreen from "../screens/SearchScreen";
+import LibaryScreen from "../screens/LibaryScreen";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -12,11 +12,13 @@ import { NavigationContainer } from "@react-navigation/native";
 const Tab = createBottomTabNavigator();
 
 function BottomTabs() {
+    const theme = { mode: "dark" };
+    let activeColors = Colors[theme.mode];
     return (
         <Tab.Navigator
             screenOptions={{
                 tabBarStyle: {
-                    backgroundColor: "#fff",
+                    backgroundColor: activeColors.hue1,
                     position: "absolute",
                     bottom: 0,
                     left: 0,
@@ -30,8 +32,8 @@ function BottomTabs() {
                 options={{
                     tabBarLabel: "Home",
                     headerShown: false,
-                    tabBarActiveTintColor: "#202020",
-                    tabBarInactiveTintColor: "#8d8d8d",
+                    tabBarActiveTintColor: activeColors.hue12,
+                    tabBarInactiveTintColor: activeColors.hu9,
                     tabBarIcon: ({ color, size }) => (
                         <Svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none">
                             <Path

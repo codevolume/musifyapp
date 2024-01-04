@@ -23,8 +23,8 @@ const SearchScreen = () => {
         setSearchText(text);
     };
 
-    let submitSearch = () => {
-        search(searchText);
+    let submitSearch = async () => {
+        console.log(await search(searchText));
     }
 
     return (
@@ -37,7 +37,7 @@ const SearchScreen = () => {
                             <Path d="M20 20L17 17" stroke="#646464" stroke-width="2" stroke-linecap="round" />
                         </Svg>
 
-                        <TextInput placeholder="Search for something..."     onChangeText={searchSuggest} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: "#646464" }} />
+                        <TextInput placeholder="Search for something..." onChangeText={searchSuggest} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: "#646464" }} />
                     </View>
 
                     <View style={{ backgroundColor: "#0b3b2c", width: 48, height: 48, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>

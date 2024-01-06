@@ -71,39 +71,40 @@ let suggest = (query) => {
 
 //TODO: implement search api
 let search = (query) => {
-    fetch("https://music.youtube.com/youtubei/v1/search?key=" + key + "&prettyPrint=false", {
-        "headers": {
-            "accept": "*/*",
-            "accept-language": "en-US,en;q=0.9",
-            "content-type": "application/json",
-            "sec-ch-ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\"",
-            "sec-ch-ua-arch": "\"x86\"",
-            "sec-ch-ua-bitness": "\"64\"",
-            "sec-ch-ua-full-version": "\"120.0.6099.130\"",
-            "sec-ch-ua-full-version-list": "\"Not_A Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"120.0.6099.130\", \"Google Chrome\";v=\"120.0.6099.130\"",
-            "sec-ch-ua-mobile": "?0",
-            "sec-ch-ua-model": "\"\"",
-            "sec-ch-ua-platform": "\"Windows\"",
-            "sec-ch-ua-platform-version": "\"15.0.0\"",
-            "sec-ch-ua-wow64": "?0",
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "same-origin",
-            "sec-fetch-site": "same-origin",
-            "x-goog-visitor-id": visitorID,
-            "x-youtube-bootstrap-logged-in": "false",
-            "x-youtube-client-name": "67",
-            "x-youtube-client-version": "1.20231214.00.00"
-        },
-        "referrer": "https://music.youtube.com/",
-        "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"context\":{\"client\":{\"hl\":\"en\",\"gl\":\"HU\",\"remoteHost\":\"37.76.26.186\",\"deviceMake\":\"\",\"deviceModel\":\"\",\"visitorData\":\"" + visitorID + "\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,gzip(gfe)\",\"clientName\":\"WEB_REMIX\",\"clientVersion\":\"1.20231214.00.00\",\"osName\":\"Windows\",\"osVersion\":\"10.0\",\"originalUrl\":\"https://music.youtube.com/?cbrd=1\",\"platform\":\"DESKTOP\",\"clientFormFactor\":\"UNKNOWN_FORM_FACTOR\",\"configInfo\":{\"appInstallData\":\"CLKisawGEIiHsAUQvbauBRDNlbAFEOuTrgUQlPr-EhC3768FEKihsAUQ54b_EhDQjbAFEKSgsAUQt-r-EhD7n7AFEOmMsAUQ_bj9EhCmgbAFEPmfsAUQ_Z-wBRDks_4SEPX5rwUQrLevBRDqw68FEKagsAUQ3ej-EhCp968FEMzfrgUQopKwBRCei7AFENOVsAUQyfevBRDMrv4SELedsAUQmvCvBRDr6P4SEL6KsAUQ0-GvBRCpoLAFEIjjrwUQ_IWwBRComrAFENnJrwUQvvmvBRC4i64FEMeDsAUQmPz-EhCZlLAFEL6bsAUQvZmwBRCu1P4SENWIsAUQq4KwBRCQorAFEKKBsAUQ57qvBRC7o7AFELz5rwUQpcL-EhDh8q8FENqYsAUQvoT_EhDF_Lci\",\"coldConfigData\":\"CLKisawGEO66rQUQxYWuBRDrk64FEL22rgUQ2O6uBRCkxa8FEM2BsAUQ4YGwBRCwiLAFELKIsAUQuIqwBRC-irAFENOVsAUQnZmwBRDymrAFEL6bsAUQt52wBRD5n7AFEPufsAUQ_Z-wBRCkoLAFEKagsAUQqaCwBRC0oLAFELagsAUQ_aCwBRCoobAFEJCisAUQk6KwBRC7o7AFEIaksAUaMkFPakZveDBDUTNCTHo0aWhRYmttQnJoUFg1Y21mc2tfT19ta01fNl9raU9HUzI0VG5BIjJBT2pGb3gwQ1EzQkx6NGloUWJrbUJyaFBYNWNtZnNrX09fbWtNXzZfa2lPR1MyNFRuQSpMQ0FNU013MFRncGFvQXM0VHBoX1NFdjBHanhuVkFOMGF2UUFWSEpLQzBBemI5Z2FPSHEzSUJwRFpCSl9SekF2Yk9JLThCUWJBU2c9PQ%3D%3D\",\"coldHashData\":\"CLKisawGEhQxMTg2ODA1OTQ3MTU1MjkzMjU3MBiyorGsBjIyQU9qRm94MENRM0JMejRpaFFia21CcmhQWDVjbWZza19PX21rTV82X2tpT0dTMjRUbkE6MkFPakZveDBDUTNCTHo0aWhRYmttQnJoUFg1Y21mc2tfT19ta01fNl9raU9HUzI0VG5BQkxDQU1TTXcwVGdwYW9BczRUcGhfU0V2MEdqeG5WQU4wYXZRQVZISktDMEF6YjlnYU9IcTNJQnBEWkJKX1J6QXZiT0ktOEJRYkFTZz09\",\"hotHashData\":\"CLKisawGEhMyNDY4NzEyMjM0NDIxNDQ1NDg5GLKisawGKJTk_BIo3JP9EijGsv0SKKq0_RIoo_v9Eiiekf4SKJqt_hIoyMr-Eijdzv4SKKjh_hIowu7-EiiV-P4SKMX-_hIouoL_Eiibg_8SKL6E_xIo2oX_Eijnhv8SKKuI_xIyMkFPakZveDBDUTNCTHo0aWhRYmttQnJoUFg1Y21mc2tfT19ta01fNl9raU9HUzI0VG5BOjJBT2pGb3gwQ1EzQkx6NGloUWJrbUJyaFBYNWNtZnNrX09fbWtNXzZfa2lPR1MyNFRuQUI4Q0FNU0pnMEoySV81RmNvQXFEbkFFZThJbXhRVkU0M2l6UXlMN2dIeDRBNjFnQVRNdWNzTDgxWkY%3D\"},\"browserName\":\"Chrome\",\"browserVersion\":\"120.0.0.0\",\"acceptHeader\":\"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7\",\"deviceExperimentId\":\"ChxOek14TnpNeE1qYzNNVEkxTURJeE5UWTFOQT09ELKisawGGLKisawG\",\"screenWidthPoints\":574,\"screenHeightPoints\":909,\"screenPixelDensity\":1,\"screenDensityFloat\":1,\"utcOffsetMinutes\":60,\"userInterfaceTheme\":\"USER_INTERFACE_THEME_DARK\",\"timeZone\":\"Europe/Budapest\",\"musicAppInfo\":{\"pwaInstallabilityStatus\":\"PWA_INSTALLABILITY_STATUS_UNKNOWN\",\"webDisplayMode\":\"WEB_DISPLAY_MODE_BROWSER\",\"storeDigitalGoodsApiSupportStatus\":{\"playStoreDigitalGoodsApiSupportStatus\":\"DIGITAL_GOODS_API_SUPPORT_STATUS_UNSUPPORTED\"}}},\"user\":{\"lockedSafetyMode\":false},\"request\":{\"useSsl\":true,\"internalExperimentFlags\":[],\"consistencyTokenJars\":[]},\"adSignalsInfo\":{\"params\":[{\"key\":\"dt\",\"value\":\"1703694650269\"},{\"key\":\"flash\",\"value\":\"0\"},{\"key\":\"frm\",\"value\":\"0\"},{\"key\":\"u_tz\",\"value\":\"60\"},{\"key\":\"u_his\",\"value\":\"3\"},{\"key\":\"u_h\",\"value\":\"1080\"},{\"key\":\"u_w\",\"value\":\"1920\"},{\"key\":\"u_ah\",\"value\":\"1032\"},{\"key\":\"u_aw\",\"value\":\"1920\"},{\"key\":\"u_cd\",\"value\":\"24\"},{\"key\":\"bc\",\"value\":\"31\"},{\"key\":\"bih\",\"value\":\"909\"},{\"key\":\"biw\",\"value\":\"562\"},{\"key\":\"brdim\",\"value\":\"953,0,953,0,1920,0,974,1039,574,909\"},{\"key\":\"vis\",\"value\":\"1\"},{\"key\":\"wgl\",\"value\":\"true\"},{\"key\":\"ca_type\",\"value\":\"image\"}]}},\"query\":\" " + query + "\",\"suggestStats\":{\"validationStatus\":\"VALID\",\"parameterValidationStatus\":\"VALID_PARAMETERS\",\"clientName\":\"youtube-music\",\"searchMethod\":\"ENTER_KEY\",\"inputMethods\":[\"KEYBOARD\"],\"originalQuery\":\"" + query + "\",\"availableSuggestions\":[{\"index\":0,\"type\":0},{\"index\":1,\"type\":0},{\"index\":2,\"type\":0},{\"index\":3,\"type\":0}],\"zeroPrefixEnabled\":true,\"firstEditTimeMsec\":11907,\"lastEditTimeMsec\":31188}}",
-        "method": "POST",
-        "mode": "cors",
-        "credentials": "include"
-    }).then(async (response) => {
-       
-        console.log(digestResultResponse(await response.json()));
-    });
+    return new Promise((resolved) => {
+        fetch("https://music.youtube.com/youtubei/v1/search?key=" + key + "&prettyPrint=false", {
+            "headers": {
+                "accept": "*/*",
+                "accept-language": "en-US,en;q=0.9",
+                "content-type": "application/json",
+                "sec-ch-ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\"",
+                "sec-ch-ua-arch": "\"x86\"",
+                "sec-ch-ua-bitness": "\"64\"",
+                "sec-ch-ua-full-version": "\"120.0.6099.130\"",
+                "sec-ch-ua-full-version-list": "\"Not_A Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"120.0.6099.130\", \"Google Chrome\";v=\"120.0.6099.130\"",
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-model": "\"\"",
+                "sec-ch-ua-platform": "\"Windows\"",
+                "sec-ch-ua-platform-version": "\"15.0.0\"",
+                "sec-ch-ua-wow64": "?0",
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "same-origin",
+                "sec-fetch-site": "same-origin",
+                "x-goog-visitor-id": visitorID,
+                "x-youtube-bootstrap-logged-in": "false",
+                "x-youtube-client-name": "67",
+                "x-youtube-client-version": "1.20231214.00.00"
+            },
+            "referrer": "https://music.youtube.com/",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "body": "{\"context\":{\"client\":{\"hl\":\"en\",\"gl\":\"HU\",\"remoteHost\":\"37.76.26.186\",\"deviceMake\":\"\",\"deviceModel\":\"\",\"visitorData\":\"" + visitorID + "\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,gzip(gfe)\",\"clientName\":\"WEB_REMIX\",\"clientVersion\":\"1.20231214.00.00\",\"osName\":\"Windows\",\"osVersion\":\"10.0\",\"originalUrl\":\"https://music.youtube.com/?cbrd=1\",\"platform\":\"DESKTOP\",\"clientFormFactor\":\"UNKNOWN_FORM_FACTOR\",\"configInfo\":{\"appInstallData\":\"CLKisawGEIiHsAUQvbauBRDNlbAFEOuTrgUQlPr-EhC3768FEKihsAUQ54b_EhDQjbAFEKSgsAUQt-r-EhD7n7AFEOmMsAUQ_bj9EhCmgbAFEPmfsAUQ_Z-wBRDks_4SEPX5rwUQrLevBRDqw68FEKagsAUQ3ej-EhCp968FEMzfrgUQopKwBRCei7AFENOVsAUQyfevBRDMrv4SELedsAUQmvCvBRDr6P4SEL6KsAUQ0-GvBRCpoLAFEIjjrwUQ_IWwBRComrAFENnJrwUQvvmvBRC4i64FEMeDsAUQmPz-EhCZlLAFEL6bsAUQvZmwBRCu1P4SENWIsAUQq4KwBRCQorAFEKKBsAUQ57qvBRC7o7AFELz5rwUQpcL-EhDh8q8FENqYsAUQvoT_EhDF_Lci\",\"coldConfigData\":\"CLKisawGEO66rQUQxYWuBRDrk64FEL22rgUQ2O6uBRCkxa8FEM2BsAUQ4YGwBRCwiLAFELKIsAUQuIqwBRC-irAFENOVsAUQnZmwBRDymrAFEL6bsAUQt52wBRD5n7AFEPufsAUQ_Z-wBRCkoLAFEKagsAUQqaCwBRC0oLAFELagsAUQ_aCwBRCoobAFEJCisAUQk6KwBRC7o7AFEIaksAUaMkFPakZveDBDUTNCTHo0aWhRYmttQnJoUFg1Y21mc2tfT19ta01fNl9raU9HUzI0VG5BIjJBT2pGb3gwQ1EzQkx6NGloUWJrbUJyaFBYNWNtZnNrX09fbWtNXzZfa2lPR1MyNFRuQSpMQ0FNU013MFRncGFvQXM0VHBoX1NFdjBHanhuVkFOMGF2UUFWSEpLQzBBemI5Z2FPSHEzSUJwRFpCSl9SekF2Yk9JLThCUWJBU2c9PQ%3D%3D\",\"coldHashData\":\"CLKisawGEhQxMTg2ODA1OTQ3MTU1MjkzMjU3MBiyorGsBjIyQU9qRm94MENRM0JMejRpaFFia21CcmhQWDVjbWZza19PX21rTV82X2tpT0dTMjRUbkE6MkFPakZveDBDUTNCTHo0aWhRYmttQnJoUFg1Y21mc2tfT19ta01fNl9raU9HUzI0VG5BQkxDQU1TTXcwVGdwYW9BczRUcGhfU0V2MEdqeG5WQU4wYXZRQVZISktDMEF6YjlnYU9IcTNJQnBEWkJKX1J6QXZiT0ktOEJRYkFTZz09\",\"hotHashData\":\"CLKisawGEhMyNDY4NzEyMjM0NDIxNDQ1NDg5GLKisawGKJTk_BIo3JP9EijGsv0SKKq0_RIoo_v9Eiiekf4SKJqt_hIoyMr-Eijdzv4SKKjh_hIowu7-EiiV-P4SKMX-_hIouoL_Eiibg_8SKL6E_xIo2oX_Eijnhv8SKKuI_xIyMkFPakZveDBDUTNCTHo0aWhRYmttQnJoUFg1Y21mc2tfT19ta01fNl9raU9HUzI0VG5BOjJBT2pGb3gwQ1EzQkx6NGloUWJrbUJyaFBYNWNtZnNrX09fbWtNXzZfa2lPR1MyNFRuQUI4Q0FNU0pnMEoySV81RmNvQXFEbkFFZThJbXhRVkU0M2l6UXlMN2dIeDRBNjFnQVRNdWNzTDgxWkY%3D\"},\"browserName\":\"Chrome\",\"browserVersion\":\"120.0.0.0\",\"acceptHeader\":\"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7\",\"deviceExperimentId\":\"ChxOek14TnpNeE1qYzNNVEkxTURJeE5UWTFOQT09ELKisawGGLKisawG\",\"screenWidthPoints\":574,\"screenHeightPoints\":909,\"screenPixelDensity\":1,\"screenDensityFloat\":1,\"utcOffsetMinutes\":60,\"userInterfaceTheme\":\"USER_INTERFACE_THEME_DARK\",\"timeZone\":\"Europe/Budapest\",\"musicAppInfo\":{\"pwaInstallabilityStatus\":\"PWA_INSTALLABILITY_STATUS_UNKNOWN\",\"webDisplayMode\":\"WEB_DISPLAY_MODE_BROWSER\",\"storeDigitalGoodsApiSupportStatus\":{\"playStoreDigitalGoodsApiSupportStatus\":\"DIGITAL_GOODS_API_SUPPORT_STATUS_UNSUPPORTED\"}}},\"user\":{\"lockedSafetyMode\":false},\"request\":{\"useSsl\":true,\"internalExperimentFlags\":[],\"consistencyTokenJars\":[]},\"adSignalsInfo\":{\"params\":[{\"key\":\"dt\",\"value\":\"1703694650269\"},{\"key\":\"flash\",\"value\":\"0\"},{\"key\":\"frm\",\"value\":\"0\"},{\"key\":\"u_tz\",\"value\":\"60\"},{\"key\":\"u_his\",\"value\":\"3\"},{\"key\":\"u_h\",\"value\":\"1080\"},{\"key\":\"u_w\",\"value\":\"1920\"},{\"key\":\"u_ah\",\"value\":\"1032\"},{\"key\":\"u_aw\",\"value\":\"1920\"},{\"key\":\"u_cd\",\"value\":\"24\"},{\"key\":\"bc\",\"value\":\"31\"},{\"key\":\"bih\",\"value\":\"909\"},{\"key\":\"biw\",\"value\":\"562\"},{\"key\":\"brdim\",\"value\":\"953,0,953,0,1920,0,974,1039,574,909\"},{\"key\":\"vis\",\"value\":\"1\"},{\"key\":\"wgl\",\"value\":\"true\"},{\"key\":\"ca_type\",\"value\":\"image\"}]}},\"query\":\" " + query + "\",\"suggestStats\":{\"validationStatus\":\"VALID\",\"parameterValidationStatus\":\"VALID_PARAMETERS\",\"clientName\":\"youtube-music\",\"searchMethod\":\"ENTER_KEY\",\"inputMethods\":[\"KEYBOARD\"],\"originalQuery\":\"" + query + "\",\"availableSuggestions\":[{\"index\":0,\"type\":0},{\"index\":1,\"type\":0},{\"index\":2,\"type\":0},{\"index\":3,\"type\":0}],\"zeroPrefixEnabled\":true,\"firstEditTimeMsec\":11907,\"lastEditTimeMsec\":31188}}",
+            "method": "POST",
+            "mode": "cors",
+            "credentials": "include"
+        }).then(async (response) => {
+            resolved(digestResultResponse(await response.json()));
+        });
+    })
 }
 
 

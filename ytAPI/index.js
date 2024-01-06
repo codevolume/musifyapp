@@ -59,7 +59,7 @@ let suggest = (query) => {
             "mode": "cors",
             "credentials": "include"
         }).then(async (response) => {
-            console.log(response.status, response.statusText)
+            /* console.log(response.status, response.statusText) */
             let jsonData = await response.json();
             suggestFormatter(jsonData).then((formatted) => {
                 resolved(formatted);

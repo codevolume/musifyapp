@@ -15,9 +15,7 @@ const HomeScreen = () => {
     const { currentTrack, setCurrentTrack } = useContext(Player);
     const [settingModal, setSettingModal] = useState(false);
 
-    const play = () => {
-        
-    };
+    const play = () => {};
 
     return (
         <>
@@ -33,16 +31,16 @@ const HomeScreen = () => {
                     </View>
 
                     <View style={{ height: "100%", backgroundColor: activeColors.hue1 }}>
-                        <ScrollView style={{ flex: 1, marginBottom: currentTrack ? 285 : 200 }} showsVerticalScrollIndicator={false}>
+                        <ScrollView style={{ flex: 1, marginBottom: currentTrack ? 275 : 200 }} showsVerticalScrollIndicator={false}>
                             <View style={{ paddingTop: 25, gap: 16 }}>
-                                <FlatList contentContainerStyle={{ paddingHorizontal: 25 }} horizontal={true} keyExtractor={(item, index) => index.toString()} showsHorizontalScrollIndicator={false} data={category} renderItem={({ item }) => <CategoryItem item={item} />} />
+                                <FlatList contentContainerStyle={{ paddingHorizontal: 25 }} horizontal={true} showsHorizontalScrollIndicator={false} data={category} renderItem={({ item }) => <CategoryItem item={item} />} />
                             </View>
                             <View style={{ paddingTop: 35, paddingHorizontal: 25 }}>
                                 <View style={{ paddingBottom: 18 }}>
                                     <Text style={{ fontSize: 20, color: activeColors.hue12, fontWeight: "bold" }}>Quick Play</Text>
                                 </View>
 
-                                <FlatList showsHorizontalScrollIndicator={false} data={Data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => <Item item={item} onPress={play} isPlaying={item === currentTrack} />} />
+                                <FlatList showsHorizontalScrollIndicator={false} data={Data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => <Item item={item} isPlaying={item === currentTrack} />} />
                             </View>
                             <View style={{ paddingTop: 35, paddingHorizontal: 25 }}>
                                 <View style={{ paddingBottom: 18 }}>
@@ -54,7 +52,6 @@ const HomeScreen = () => {
                     </View>
                 </SafeAreaView>
             </View>
-            
         </>
     );
 };

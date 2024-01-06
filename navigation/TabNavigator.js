@@ -18,12 +18,12 @@ function BottomTabs() {
         <Tab.Navigator
             screenOptions={{
                 tabBarStyle: {
-                    backgroundColor: activeColors.hue1,
+                    backgroundColor: activeColors.hue2,
                     position: "absolute",
                     bottom: 0,
                     left: 0,
                     right: 0,
-/*                     borderTopWidth: 0, */
+                    borderTopWidth: 0,
                 },
             }}>
             <Tab.Screen
@@ -52,8 +52,8 @@ function BottomTabs() {
                 options={{
                     tabBarLabel: "Search",
                     headerShown: false,
-                    tabBarActiveTintColor: "#202020",
-                    tabBarInactiveTintColor: "#8d8d8d",
+                    tabBarActiveTintColor: activeColors.hue12,
+                    tabBarInactiveTintColor: activeColors.hue9,
                     tabBarIcon: ({ color, size }) => (
                         <Svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none">
                             <Path d="M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11Z" fill={color} />
@@ -68,8 +68,8 @@ function BottomTabs() {
                 options={{
                     tabBarLabel: "Your Libary",
                     headerShown: true,
-                    tabBarActiveTintColor: "#202020",
-                    tabBarInactiveTintColor: "#8d8d8d",
+                    tabBarActiveTintColor: activeColors.hue12,
+                    tabBarInactiveTintColor: activeColors.hue9,
                     tabBarIcon: ({ color, size }) => (
                         <Svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none">
                             <Path

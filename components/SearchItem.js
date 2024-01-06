@@ -4,8 +4,8 @@ import Svg, { Path, Circle } from "react-native-svg";
 
 const SearchItem = ({ item }) => {
     return (
-        <View style={{ flexDirection: "row", gap: 11, justifyContent: "space-between",alignItems: "center", paddingVertical: 6, width: "100%" }}>
-            <View style={{flexDirection: "row", gap: 16}}>
+        <View style={{ flexDirection: "row", gap: 11, justifyContent: "space-between", alignItems: "center", paddingVertical: 6, width: "100%" }}>
+            <View style={{ flexDirection: "row", gap: 16 }}>
                 <Svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none">
                     <Circle cx="11" cy="11" r="7" stroke="#646464" stroke-width="2" />
                     <Path d="M20 20L17 17" stroke="#646464" stroke-width="2" stroke-linecap="round" />

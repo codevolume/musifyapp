@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
 import Svg, { Path } from "react-native-svg";
 import PlayerModal from "../modals/PlayerModal";
@@ -10,18 +10,22 @@ const MinimalizedModal = ({ item }) => {
 
     return (
         <>
-            <View style={{ position: "absolute", bottom: Platform.OS === "android" ? 60 : 90, left: 0, right: 0, zIndex: 1 }}>
+            <View style={{ position: "absolute", bottom: Platform.OS === "android" ? 60 : 78, left: 0, right: 0, zIndex: 1 }}>
                 <TouchableOpacity onPress={() => setModalVisible(true)}>
-                    <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: activeColors.hue2, paddingHorizontal: 25, paddingVertical: 12, borderRadius: 18, marginHorizontal: 5 }}>
+                    <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: activeColors.hue2, paddingHorizontal: 25, paddingVertical: 12 }}>
                         <View style={{ flexDirection: "row", alignItems: "center", gap: 11, flexShrink: 1 }}>
-                            <View style={{ backgroundColor: "#1e40af", width: 48, height: 48, borderRadius: 50, justifyContent: "center", alignItems: "center" }}>
-                                <Text style={{ color: "#60a5fa", fontSize: 20, fontWeight: "bold" }}>{item.title.charAt(0)}</Text>
-                            </View>
+                            {item.thumbnail ? (
+                                <Image source={{ uri: item.thumbnail }} style={{ width: 48, height: 48, borderRadius: 8 }} />
+                            ) : (
+                                <View style={{ backgroundColor: "#1e40af", width: 48, height: 48, borderRadius: 50, justifyContent: "center", alignItems: "center" }}>
+                                    <Text style={{ color: "#60a5fa", fontSize: 20, fontWeight: "bold" }}>{item.title.charAt(0)}</Text>
+                                </View>
+                            )}
                             <View>
                                 <Text style={{ fontSize: 16, fontWeight: "500", color: activeColors.hue12 }} numberOfLines={1}>
                                     {item.title}
                                 </Text>
-                                <Text style={{ fontSize: 12, color: activeColors.hue11 }}>{item.singer}</Text>
+                                <Text style={{ fontSize: 12, color: activeColors.hue11 }}>{item.subtitle}</Text>
                             </View>
                         </View>
 

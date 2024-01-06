@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 
+
 const PlayerModal = ({item, modalVisible, setModalVisible}) => {
 
     return (
@@ -20,10 +21,10 @@ const PlayerModal = ({item, modalVisible, setModalVisible}) => {
                                 </Pressable>
                             </View>
                             <View style={{ paddingHorizontal: 25, justifyContent: "center", height: "100%", paddingBottom: 200 }}>
-                                <Image source={require("../assets/cover.jpg")} style={{ width: "100%", borderRadius: 6, height: 360 }} resizeMode="contain" />
+                                <Image source={{uri: item.thumbnail}} style={{ width: "100%", borderRadius: 6, height: 360 }} resizeMode="contain" />
                                 <View style={{ paddingTop: 20, gap: 10 }}>
                                     <Text style={{ fontSize: 24, fontWeight: "bold", color: "#fff" }}>{item?.title}</Text>
-                                    <Text style={{ fontSize: 16, color: "#b4b4b4" }}>{item?.singer}</Text>
+                                    <Text style={{ fontSize: 16, color: "#b4b4b4" }}>{item?.subtitle}</Text>
                                 </View>
 
                                 <View style={{ width: "100%", flexDirection: "row", justifyContent: "space-between", paddingTop: 20 }}>

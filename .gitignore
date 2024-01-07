@@ -36,3 +36,6 @@ yarn-error.*
 
 #vscode bullshit
 %ProgramData%
+
+#expo things
+android

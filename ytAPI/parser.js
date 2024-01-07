@@ -3,7 +3,30 @@
 //16:43
 //szerintem lassan az elmegyógyban leszek ettől a szartól
 
-export default function digestResultResponse(json) {
+let suggestParser = (response) => {
+    return new Promise((resolved) => {
+        try {
+            let content = response["contents"][0]["searchSuggestionsSectionRenderer"]["contents"];
+            let returnValue = [];
+            delete content[0];
+
+            for (let x in content) {
+                let text = content[x]["searchSuggestionRenderer"]["suggestion"]["runs"][0]["text"] + content[x]["searchSuggestionRenderer"]["suggestion"]["runs"][1]["text"];
+                returnValue.push(text);
+            }
+
+            previousResponse = returnValue;
+            resolved(returnValue);
+
+        } catch (error) {
+            resolved(previousResponse);
+        }
+
+
+    })
+}
+
+function digestResultResponse(json) {
     let final = {
         results: 0,
         shelves: [],
@@ -203,3 +226,46 @@ export default function digestResultResponse(json) {
 
     return final;
 }
+
+let videoInfoParser = (data) => {
+    let videoDetails = data["videoDetails"];
+    let returnValue = {
+        title: videoDetails["title"],
+        videoId: videoDetails["videoId"],
+        viewCount: videoDetails["viewCount"],
+        channelId: videoDetails["channelId"],
+        author: videoDetails["author"],
+        thumbnails: videoDetails["thumbnail"]["thumbnails"],
+        coverPhoto: {}
+    }
+
+    let microFormat = data["microformat"]["microformatDataRenderer"];
+    let formats = data["streamingData"]["adaptiveFormats"];
+
+    for (let i in formats) {
+        if (formats[i]["mimeType"] != "audio/webm; codecs=\"opus\"") {
+            delete formats[i];
+        }
+    }
+
+    let playBackInfo = {
+        length: microFormat["videoDetails"]["durationSeconds"],
+        formats: formats
+    }
+
+    let largest = {};
+    let largestWidth = returnValue.thumbnails[0].width;
+    for (let i in returnValue.thumbnails) {
+        if (returnValue.thumbnails[i].width > largestWidth) {
+            largest = returnValue.thumbnails[i];
+        }
+    }
+
+    returnValue.playBackInfo = playBackInfo;
+
+    returnValue.coverPhoto = largest;
+
+    return returnValue;
+}
+
+export {suggestParser, digestResultResponse, videoInfoParser};

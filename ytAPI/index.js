@@ -21,30 +21,9 @@ function getVisitorId() {
 const key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30";
 let previousResponse = "";
 
-import digestResultResponse from "./parser";
-
-let suggestFormatter = (response) => {
-    return new Promise((resolved) => {
-        try {
-            let content = response["contents"][0]["searchSuggestionsSectionRenderer"]["contents"];
-            let returnValue = [];
-            delete content[0];
-
-            for (let x in content) {
-                let text = content[x]["searchSuggestionRenderer"]["suggestion"]["runs"][0]["text"] + content[x]["searchSuggestionRenderer"]["suggestion"]["runs"][1]["text"];
-                returnValue.push(text);
-            }
-
-            previousResponse = returnValue;
-            resolved(returnValue);
-
-        } catch (error) {
-            resolved(previousResponse);
-        }
+import { digestResultResponse, suggestParser, videoInfoParser } from "./parser";
 
 
-    })
-}
 
 let suggest = (query) => {
     return new Promise(async (resolved) => {
@@ -80,7 +59,7 @@ let suggest = (query) => {
         }).then(async (response) => {
             /* console.log(response.status, response.statusText) */
             let jsonData = await response.json();
-            suggestFormatter(jsonData).then((formatted) => {
+            suggestParser(jsonData).then((formatted) => {
                 resolved(formatted);
             })
         });
@@ -88,7 +67,6 @@ let suggest = (query) => {
 };
 
 
-//TODO: implement search api
 let search = (query) => {
     return new Promise(async (resolved) => {
         fetch("https://music.youtube.com/youtubei/v1/search?key=" + key + "&prettyPrint=false", {
@@ -129,7 +107,7 @@ let search = (query) => {
 
 //This should work, but its not tested under react native
 //TODO, test this function
-function fetchRadio(videoId, key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30") {
+function fetchRadio(videoId) {
     return new Promise(async (resolved) => {
         let body = { "enablePersistentPlaylistPanel": true, "tunerSettingValue": "AUTOMIX_SETTING_NORMAL", "videoId": videoId, "playlistId": "RDAMVM" + videoId, "params": "wAEB", "loggingContext": { "vssLoggingContext": { "serializedContextData": "GhFSREFNVk1YcW9hblRqNXBOWQ%3D%3D" } }, "watchEndpointMusicSupportedConfigs": { "watchEndpointMusicConfig": { "musicVideoType": "MUSIC_VIDEO_TYPE_ATV" } }, "isAudioOnly": true, "responsiveSignals": { "videoInteraction": [] }, "queueContextParams": "", "context": { "client": { "hl": "en", "gl": "HU", "remoteHost": "37.76.46.114", "deviceMake": "", "deviceModel": "", "visitorData": "CgttR0RrTjJEUlAwUSiIkZiqBjIICgJIVRICEgA%3D", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36,gzip(gfe)", "clientName": "WEB_REMIX", "clientVersion": "1.20231030.01.00", "osName": "Windows", "osVersion": "10.0", "originalUrl": "https://music.youtube.com/?cbrd=1", "platform": "DESKTOP", "clientFormFactor": "UNKNOWN_FORM_FACTOR", "configInfo": { "appInstallData": "CIiRmKoGEPyFsAUQpoGwBRCa8K8FEIjjrwUQq4KwBRDd6P4SEKL4_hIQlPr-EhDJ968FEKiBsAUQp_evBRCIh7AFEOe6rwUQ5LP-EhDQ4q8FEL22rgUQ6-j-EhC-irAFELz5rwUQtMmvBRCu1P4SENnJrwUQuIuuBRC1pq8FEL_3rwUQzN-uBRDT4a8FEOuTrgUQ9fmvBRC3768FEL6LsAUQvvmvBRCh168FEKn3rwUQzK7-EhClwv4SEKy3rwUQ242wBRDUiLAFEP24_RIQ6ej-EhDV5a8FELfq_hIQ6sOvBQ%3D%3D", "coldConfigData": "CIiRmKoGEOq6rQUQxIWuBRDrk64FEL22rgUQ_eiuBRCkxa8FEKPWrwUQodevBRDQ4q8FEJXurwUQt--vBRD-768FEKzzrwUQofqvBRCIh7AFEJqHsAUQw4iwBRDUiLAFEL6KsAUQvouwBRDbjbAFGjJBT2pGb3gzZ3hUcWwxWE5XMks1dmtXczBmZWNaMDJyZTVpSXZWZDNwMFpBTGlZUXduUSIyQU9qRm94M2d4VHFsMVhOVzJLNXZrV3MwZmVjWjAycmU1aUl2VmQzcDBaQUxpWVF3blEqUENBTVNOZzBTZ3Bhb0FzZ1dfZ1dtSDlJU19RYVBHZElCZV93QUZScVNndEFNMl9ZR2poNnlSdDVpblMtRGhBV1YzQWFmMGN3THN6T2dEQT09", "coldHashData": "CIiRmKoGEhQxNTMzMzQ0NDI4MTgwMjc1NTc1MBiIkZiqBjIyQU9qRm94M2d4VHFsMVhOVzJLNXZrV3MwZmVjWjAycmU1aUl2VmQzcDBaQUxpWVF3blE6MkFPakZveDNneFRxbDFYTlcySzV2a1dzMGZlY1owMnJlNWlJdlZkM3AwWkFMaVlRd25RQlBDQU1TTmcwU2dwYW9Bc2dXX2dXbUg5SVNfUWFQR2RJQmVfd0FGUnFTZ3RBTTJfWUdqaDZ5UnQ1aW5TLURoQVdWM0FhZjBjd0xzek9nREE9PQ%3D%3D", "hotHashData": "CIiRmKoGEhMyNDY4NzEyMjM0NDIxNDQ1NDg5GIiRmKoGKJTk_BIo25P9EijGsv0SKKq0_RIonpH-Eiiarf4SKMjK_hIo3c7-Eiiu1P4SKKjh_hIoweb-EiiQ7v4SKI71_hIo4Pb-Eiii-P4SKPf5_hIolPr-EjIyQU9qRm94M2d4VHFsMVhOVzJLNXZrV3MwZmVjWjAycmU1aUl2VmQzcDBaQUxpWVF3blE6MkFPakZveDNneFRxbDFYTlcySzV2a1dzMGZlY1owMnJlNWlJdlZkM3AwWkFMaVlRd25RQixDQU1TR3cwTjJJXzVGY29BcURuQUVSVUtqZUxOREl2dUFmSGdEcldBQkE9PQ%3D%3D" }, "browserName": "Chrome", "browserVersion": "118.0.0.0", "acceptHeader": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "deviceExperimentId": "ChxOekk1TnpVeU9UWXlOamt6T0RZNE16YzJPUT09EIiRmKoGGIiRmKoG", "screenWidthPoints": 1091, "screenHeightPoints": 923, "screenPixelDensity": 1, "screenDensityFloat": 1, "utcOffsetMinutes": 60, "userInterfaceTheme": "USER_INTERFACE_THEME_DARK", "timeZone": "Europe/Budapest", "musicAppInfo": { "pwaInstallabilityStatus": "PWA_INSTALLABILITY_STATUS_UNKNOWN", "webDisplayMode": "WEB_DISPLAY_MODE_BROWSER", "storeDigitalGoodsApiSupportStatus": { "playStoreDigitalGoodsApiSupportStatus": "DIGITAL_GOODS_API_SUPPORT_STATUS_UNSUPPORTED" } } }, "user": { "lockedSafetyMode": false }, "request": { "useSsl": true, "internalExperimentFlags": [], "consistencyTokenJars": [] }, "clickTracking": { "clickTrackingParams": "CJ0EEMjeAiITCL_D5v39qYIDFezjQgUdsw4MXA==" }, "adSignalsInfo": { "params": [{ "key": "dt", "value": "1699088524477" }, { "key": "flash", "value": "0" }, { "key": "frm", "value": "0" }, { "key": "u_tz", "value": "60" }, { "key": "u_his", "value": "3" }, { "key": "u_h", "value": "1080" }, { "key": "u_w", "value": "1920" }, { "key": "u_ah", "value": "1032" }, { "key": "u_aw", "value": "1920" }, { "key": "u_cd", "value": "24" }, { "key": "bc", "value": "31" }, { "key": "bih", "value": "923" }, { "key": "biw", "value": "1079" }, { "key": "brdim", "value": "1920,0,1920,0,1920,0,1920,1032,1091,923" }, { "key": "vis", "value": "1" }, { "key": "wgl", "value": "true" }, { "key": "ca_type", "value": "image" }] } } };
         body = JSON.stringify(body);
@@ -191,4 +169,42 @@ function fetchRadio(videoId, key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30") {
     });
 }
 
-export { fetchRadio, search, suggest }
+let videoInfo = (videoId) => {
+    return new Promise(async (resolved) => {
+        fetch("https://music.youtube.com/youtubei/v1/player?key=" + key + "&prettyPrint=false", {
+            "headers": {
+                "accept": "*/*",
+                "accept-language": "en-US,en;q=0.9",
+                "content-type": "application/json",
+                "sec-ch-ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\"",
+                "sec-ch-ua-arch": "\"x86\"",
+                "sec-ch-ua-bitness": "\"64\"",
+                "sec-ch-ua-full-version": "\"120.0.6099.199\"",
+                "sec-ch-ua-full-version-list": "\"Not_A Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"120.0.6099.199\", \"Google Chrome\";v=\"120.0.6099.199\"",
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-model": "\"\"",
+                "sec-ch-ua-platform": "\"Windows\"",
+                "sec-ch-ua-platform-version": "\"15.0.0\"",
+                "sec-ch-ua-wow64": "?0",
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-site": "same-origin",
+                "x-goog-visitor-id": await getVisitorId(),
+                "x-youtube-bootstrap-logged-in": "false",
+                "x-youtube-client-name": "67",
+                "x-youtube-client-version": "1.20231214.00.00"
+            },
+            "referrer": "https://music.youtube.com/",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "body": "{\"videoId\":\"" + videoId + "\",\"context\":{\"client\":{\"hl\":\"en\",\"gl\":\"HU\",\"remoteHost\":\"37.76.0.67\",\"deviceMake\":\"\",\"deviceModel\":\"\",\"visitorData\":\"" + await getVisitorId() + "\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,gzip(gfe)\",\"clientName\":\"WEB_REMIX\",\"clientVersion\":\"1.20231214.00.00\",\"osName\":\"Windows\",\"osVersion\":\"10.0\",\"originalUrl\":\"https://music.youtube.com/?cbrd=1\",\"platform\":\"DESKTOP\",\"clientFormFactor\":\"UNKNOWN_FORM_FACTOR\",\"configInfo\":{\"appInstallData\":\"CJHg6qwGEL2KsAUQqfevBRC8-a8FENPhrwUQt-r-EhDks_4SEOvo_hIQiOOvBRCa8K8FEMeDsAUQiIewBRC--a8FEKuCsAUQr_v-EhDViLAFEPqnsAUQzK7-EhClwv4SEKaBsAUQlPr-EhDnuq8FEJ6LsAUQooGwBRCZlLAFEPyFsAUQqKCwBRC_o7AFELedsAUQ2cmvBRC9mbAFELfvrwUQ0I2wBRDamLAFEKihsAUQ4fKvBRCu1P4SEJj8_hIQyfevBRDrk64FEOeG_xIQvbauBRC4i64FEOrDrwUQ7aKwBRCPorAFEN3o_hIQ9fmvBRD9uP0SEOmMsAUQjaKwBRComrAFEKy3rwUQzN-uBRC7o7AFEM2VsAUQtZuwBRDYpLAF\"},\"browserName\":\"Chrome\",\"browserVersion\":\"120.0.0.0\",\"acceptHeader\":\"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7\",\"deviceExperimentId\":\"ChxOek15TVRNMU56Y3pNalV3TWprek56TXpNQT09EJHg6qwGGJHg6qwG\",\"screenWidthPoints\":660,\"screenHeightPoints\":911,\"screenPixelDensity\":1,\"screenDensityFloat\":1,\"utcOffsetMinutes\":60,\"userInterfaceTheme\":\"USER_INTERFACE_THEME_DARK\",\"connectionType\":\"CONN_CELLULAR_4G\",\"timeZone\":\"Europe/Budapest\",\"playerType\":\"UNIPLAYER\",\"tvAppInfo\":{\"livingRoomAppMode\":\"LIVING_ROOM_APP_MODE_UNSPECIFIED\"},\"clientScreen\":\"WATCH_FULL_SCREEN\"},\"user\":{\"lockedSafetyMode\":false},\"request\":{\"useSsl\":true,\"internalExperimentFlags\":[],\"consistencyTokenJars\":[]},\"clientScreenNonce\":\"MC41MTg1OTYxNjUyMTAwMTIy\",\"adSignalsInfo\":{\"params\":[{\"key\":\"dt\",\"value\":\"1704636448056\"},{\"key\":\"flash\",\"value\":\"0\"},{\"key\":\"frm\",\"value\":\"0\"},{\"key\":\"u_tz\",\"value\":\"60\"},{\"key\":\"u_his\",\"value\":\"3\"},{\"key\":\"u_h\",\"value\":\"1080\"},{\"key\":\"u_w\",\"value\":\"1920\"},{\"key\":\"u_ah\",\"value\":\"1032\"},{\"key\":\"u_aw\",\"value\":\"1920\"},{\"key\":\"u_cd\",\"value\":\"24\"},{\"key\":\"bc\",\"value\":\"31\"},{\"key\":\"bih\",\"value\":\"911\"},{\"key\":\"biw\",\"value\":\"648\"},{\"key\":\"brdim\",\"value\":\"0,0,0,0,1920,0,1920,1032,660,911\"},{\"key\":\"vis\",\"value\":\"1\"},{\"key\":\"wgl\",\"value\":\"true\"},{\"key\":\"ca_type\",\"value\":\"image\"}]},\"clickTracking\":{\"clickTrackingParams\":\"CKkEEMjeAiITCKzS38i5y4MDFS7TQgUdK2gITA==\"}},\"playbackContext\":{\"contentPlaybackContext\":{\"html5Preference\":\"HTML5_PREF_WANTS\",\"lactMilliseconds\":\"19\",\"referer\":\"https://music.youtube.com/\",\"signatureTimestamp\":19725,\"autoCaptionsDefaultOn\":false,\"mdxContext\":{}}},\"cpn\":\"adlWd0k8BoBeEXv5\",\"playlistId\":\"RDAMVMfRyhqobl0sk\",\"captionParams\":{},\"serviceIntegrityDimensions\":{\"poToken\":\"MnR-6_LdJ-ftiH7TggJIPxASYS3Dch2TGvt7M1BMazbbDKo12CoyWtw_rrUjCjPLC3ujCcoqbL2HGSoBcwG133z0OCJlZQg08dTwUPzT8wxxyB7dnp6VsJ7o8wVbSz1rZht-l3GcjAj6duRovRPTrj4oxj3XGw==\"}}",
+            "method": "POST",
+            "mode": "cors",
+            "credentials": "include"
+        }).then(async (response) => {
+            resolved(videoInfoParser(await response.json()))
+        });
+
+    })
+}
+
+export { fetchRadio, search, suggest, videoInfo }

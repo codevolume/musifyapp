@@ -1,19 +1,32 @@
-import { SafeAreaView, View, Text, FlatList, Platform, Pressable, Modal } from "react-native";
-import React, { useContext, useState } from "react";
+import { SafeAreaView, View, Text, FlatList, Platform, Pressable, RefreshControl } from "react-native";
 import { ScrollView } from "react-native-virtualized-view";
+import { Player } from "../contexts/PlayerContext";
+import React, { useContext, useState } from "react";
 import Item from "../components/Item";
 import CategoryItem from "../components/CategoryItem";
-import { Player } from "../contexts/PlayerContext";
 import Colors from "../constans/Colors";
 
 const HomeScreen = () => {
+    // Kiválaszott mód. félkész. Todo: választhatóság, válasz tárolása.
     const theme = { mode: "dark" };
     let activeColors = Colors[theme.mode];
 
     const Data = require("../testDatas/testData.json");
     const category = require("../testDatas/categoryData.json");
+
+    
     const { currentTrack, setCurrentTrack } = useContext(Player);
     const [settingModal, setSettingModal] = useState(false);
+    const [refresh, setRefresh] = useState(false);
+
+    // Oldalfrissítés lehúzásra.
+    const pullDown = () => {
+        setRefresh(true);
+
+        setTimeout(() => {
+            setRefresh(false);
+        }, 4000);
+    };
 
     const play = () => {};
 
@@ -31,8 +44,9 @@ const HomeScreen = () => {
                     </View>
 
                     <View style={{ height: "100%", backgroundColor: activeColors.hue1 }}>
-                        <ScrollView style={{ flex: 1, marginBottom: currentTrack ? 275 : 200 }} showsVerticalScrollIndicator={false}>
+                        <ScrollView style={{ flex: 1, marginBottom: currentTrack ? 275 : 200 }} showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refresh} onRefresh={() => pullDown} tintColor={activeColors.hue12} />}>
                             <View style={{ paddingTop: 25, gap: 16 }}>
+                                {/* Ide szerintem inkább majd az előzmények jönnek. */}
                                 <FlatList contentContainerStyle={{ paddingHorizontal: 25 }} horizontal={true} showsHorizontalScrollIndicator={false} data={category} renderItem={({ item }) => <CategoryItem item={item} />} />
                             </View>
                             <View style={{ paddingTop: 35, paddingHorizontal: 25 }}>

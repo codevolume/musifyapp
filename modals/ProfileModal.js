@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const ProfileModal = () => {
+const ProfileModal = ({settingModal, setSettingModal}) => {
     return (
         <View>
             <Modal visible={settingModal} onRequestClose={() => setSettingModal(false)} animationType="slide" presentationStyle="fullScreen">

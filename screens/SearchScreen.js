@@ -1,19 +1,23 @@
-import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard, TouchableOpacity } from "react-native";
+import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard, ActivityIndicator } from "react-native";
 import Svg, { Path, Circle } from "react-native-svg";
 import React, { useState, useEffect } from "react";
 import { search, suggest } from "../ytAPI/index";
 import SearchItem from "../components/SearchItem";
 import ArtistItem from "../components/ArtistItem";
 import Item from "../components/Item";
+import Test from "../TestData";
 
 const SearchScreen = () => {
     const theme = { mode: "dark" };
     let activeColors = Colors[theme.mode];
-    const [suggestions, setSuggestions] = useState([]);
+
     const [keyboardStatus, setKeyboardStatus] = useState(false);
     const [searchText, setSearchText] = useState("");
-    const [artists, setArtists] = useState([]);
-    const [songs, setSongs] = useState([]);
+
+    const [suggestions, setSuggestions] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [searchResult, setSearchResult] = useState([]);
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         const opened = Keyboard.addListener("keyboardDidShow", () => setKeyboardStatus(true));
@@ -35,11 +39,21 @@ const SearchScreen = () => {
     };
 
     let submitSearch = async () => {
-        const res = await search(searchText);
+        try {
+            setIsLoading(true);
+            const res = await search(searchText);
 
-        setArtists(res.shelves.filter((shelf) => shelf.title === "Artists")[0].data);
-        setSongs(res.shelves.filter((shelf) => shelf.title === "Songs")[0].data);
+            setSearchResult(res);
+        } catch (e) {
+            setErrorMessage(e);
+        } finally {
+            setIsLoading(false);
+        }
     };
+
+    useEffect(() => {
+        console.log(searchResult);
+    }, [searchResult]);
 
     return (
         <View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
@@ -59,9 +73,9 @@ const SearchScreen = () => {
                     </View>
                 </View>
                 <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 25 }}>
-                    {keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : null}
-                    {keyboardStatus ? null : artists ? <FlatList data={artists} renderItem={({ item }) => <ArtistItem item={item}/>}/> : null}
-                    {keyboardStatus ? null : songs ? <FlatList data={songs} renderItem={({ item }) => <Item item={item}/>}/> : null}
+                    {keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}
+                    {/* {keyboardStatus ? null : artists ? <FlatList data={artists} renderItem={({ item }) => <ArtistItem item={item} />} /> : null}
+                    {keyboardStatus ? null : songs ? <FlatList data={songs} renderItem={({ item }) => <Item item={item} />} /> : null} */}
                 </View>
             </SafeAreaView>
         </View>

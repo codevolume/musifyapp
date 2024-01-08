@@ -7,6 +7,7 @@ import ArtistItem from "../components/ArtistItem";
 import Item from "../components/Item";
 import Test from "../TestData";
 
+// valami
 const SearchScreen = () => {
     const theme = { mode: "dark" };
     let activeColors = Colors[theme.mode];

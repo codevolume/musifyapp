@@ -38,7 +38,7 @@ function digestResultResponse(json) {
     let sectionList = json.contents.tabbedSearchResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents;
     // if (sectionList[0]?.itemSectionRenderer) {
     //     let itemSection = sectionList[0].itemSectionRenderer.contents[0];
-        
+
     //     /*if (itemSection?.messageRenderer) {
     //         let message = itemSection.messageRenderer.text.runs[0].text;
     //         final.reason = message;
@@ -52,10 +52,10 @@ function digestResultResponse(json) {
     //         final.suggestionOption.endpoints.query = renderer.correctedQueryEndpoint.searchEndpoint.query;
     //         for (let dym = 0; dym < renderer.didYouMean.runs.length; dym++)
     //             final.suggestionOption.endpoints.text += renderer.didYouMean.runs[dym].text;
-            
+
     //         for (let crq = 0; crq < renderer.correctedQuery.runs.length; crq++)
     //             final.suggestionOption.correctedList.push(renderer.correctedQuery.runs[crq]);
-            
+
 
     //     } else if (itemSection?.showingResultsForRenderer) {
     //         final.insteadOption = {correctedList: [], originalList: [], endpoints: {corrected: {text: "", query: ""}, original: {text: "", query: ""}}};
@@ -127,7 +127,7 @@ function digestResultResponse(json) {
                     browseId: null,
                     thumbnail: null
                 };
-                
+
                 let flexColumnList = responsiveMusicItem.flexColumns;
 
                 for (let fcl = 0; fcl < flexColumnList.length; fcl++) {
@@ -148,10 +148,10 @@ function digestResultResponse(json) {
                             break;
                     }
                 }
-                
+
                 let thumbnaillist = responsiveMusicItem.thumbnail.musicThumbnailRenderer.thumbnail.thumbnails;
                 entry.thumbnail = thumbnaillist[thumbnaillist.length - 1].url;
-                
+
                 if (responsiveMusicItem?.navigationEndpoint) {
                     if (responsiveMusicItem.navigationEndpoint?.watchEndpoint) {
                         entry.type = "Title";
@@ -167,8 +167,8 @@ function digestResultResponse(json) {
                                 entry.type = "Album";
                             else if (type == "MUSIC_PAGE_TYPE_PLAYLIST")
                                 entry.type = "Playlist";
-                            
-                            
+
+
                             if (responsiveMusicItem.hasOwnProperty("overlay")) {
                                 let playNavigationEndpoint = responsiveMusicItem
                                     .overlay
@@ -188,13 +188,13 @@ function digestResultResponse(json) {
                     }
                 } else {
                     entry.type = "Title";
-                    
+
                     entry.videoId = responsiveMusicItem.playlistItemData.videoId;
                     let watchEndpoint = responsiveMusicItem.flexColumns[0].musicResponsiveListItemFlexColumnRenderer.text.runs[0].navigationEndpoint.watchEndpoint;
                     if (watchEndpoint) {
                         if (watchEndpoint.hasOwnProperty("playlistId"))
                             entry.playlistId = watchEndpoint.playlistId;
-                        
+
                         if (watchEndpoint.hasOwnProperty("browseId"))
                             entry.browseId = watchEndpoint.browseId;
                     }
@@ -228,44 +228,46 @@ function digestResultResponse(json) {
 }
 
 let videoInfoParser = (data) => {
-    let videoDetails = data["videoDetails"];
-    let returnValue = {
-        title: videoDetails["title"],
-        videoId: videoDetails["videoId"],
-        viewCount: videoDetails["viewCount"],
-        channelId: videoDetails["channelId"],
-        author: videoDetails["author"],
-        thumbnails: videoDetails["thumbnail"]["thumbnails"],
-        coverPhoto: {}
-    }
-
-    let microFormat = data["microformat"]["microformatDataRenderer"];
-    let formats = data["streamingData"]["adaptiveFormats"];
-
-    for (let i in formats) {
-        if (formats[i]["mimeType"] != "audio/webm; codecs=\"opus\"") {
-            delete formats[i];
+    if (data["playabilityStatus"]["status"] != "OK") {
+        return { status: "failed", reason: data["playabilityStatus"]["reason"] }
+    } else {
+        let videoDetails = data["videoDetails"];
+        let returnValue = {
+            title: videoDetails["title"],
+            videoId: videoDetails["videoId"],
+            viewCount: videoDetails["viewCount"],
+            channelId: videoDetails["channelId"],
+            author: videoDetails["author"],
+            thumbnails: videoDetails["thumbnail"]["thumbnails"],
+            coverPhoto: {}
         }
-    }
 
-    let playBackInfo = {
-        length: microFormat["videoDetails"]["durationSeconds"],
-        formats: formats
-    }
+        let formats = data["streamingData"]["adaptiveFormats"];
 
-    let largest = {};
-    let largestWidth = returnValue.thumbnails[0].width;
-    for (let i in returnValue.thumbnails) {
-        if (returnValue.thumbnails[i].width > largestWidth) {
-            largest = returnValue.thumbnails[i];
+        for (let i in formats) {
+            if (formats[i]["mimeType"] != "audio/webm; codecs=\"opus\"") {
+                delete formats[i];
+            }
         }
+
+        let playBackInfo = {
+            formats: formats
+        }
+
+        let largest = {};
+        let largestWidth = returnValue.thumbnails[0].width;
+        for (let i in returnValue.thumbnails) {
+            if (returnValue.thumbnails[i].width > largestWidth) {
+                largest = returnValue.thumbnails[i];
+            }
+        }
+
+        returnValue.playBackInfo = playBackInfo;
+
+        returnValue.coverPhoto = largest;
+
+        return returnValue;
     }
-
-    returnValue.playBackInfo = playBackInfo;
-
-    returnValue.coverPhoto = largest;
-
-    return returnValue;
 }
 
-export {suggestParser, digestResultResponse, videoInfoParser};
+export { suggestParser, digestResultResponse, videoInfoParser };

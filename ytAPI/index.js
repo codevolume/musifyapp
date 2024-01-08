@@ -25,6 +25,7 @@ import { digestResultResponse, suggestParser, videoInfoParser } from "./parser";
 
 
 
+
 let suggest = (query) => {
     return new Promise(async (resolved) => {
         fetch("https://music.youtube.com/youtubei/v1/music/get_search_suggestions?key=" + key + "&prettyPrint=false", {
@@ -172,39 +173,28 @@ function fetchRadio(videoId) {
 let videoInfo = (videoId) => {
     return new Promise(async (resolved) => {
         fetch("https://music.youtube.com/youtubei/v1/player?key=" + key + "&prettyPrint=false", {
-            "headers": {
-                "accept": "*/*",
-                "accept-language": "en-US,en;q=0.9",
-                "content-type": "application/json",
-                "sec-ch-ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\"",
-                "sec-ch-ua-arch": "\"x86\"",
-                "sec-ch-ua-bitness": "\"64\"",
-                "sec-ch-ua-full-version": "\"120.0.6099.199\"",
-                "sec-ch-ua-full-version-list": "\"Not_A Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"120.0.6099.199\", \"Google Chrome\";v=\"120.0.6099.199\"",
-                "sec-ch-ua-mobile": "?0",
-                "sec-ch-ua-model": "\"\"",
-                "sec-ch-ua-platform": "\"Windows\"",
-                "sec-ch-ua-platform-version": "\"15.0.0\"",
-                "sec-ch-ua-wow64": "?0",
-                "sec-fetch-dest": "empty",
-                "sec-fetch-mode": "cors",
-                "sec-fetch-site": "same-origin",
-                "x-goog-visitor-id": await getVisitorId(),
-                "x-youtube-bootstrap-logged-in": "false",
-                "x-youtube-client-name": "67",
-                "x-youtube-client-version": "1.20231214.00.00"
-            },
-            "referrer": "https://music.youtube.com/",
-            "referrerPolicy": "strict-origin-when-cross-origin",
-            "body": "{\"videoId\":\"" + videoId + "\",\"context\":{\"client\":{\"hl\":\"en\",\"gl\":\"HU\",\"remoteHost\":\"37.76.0.67\",\"deviceMake\":\"\",\"deviceModel\":\"\",\"visitorData\":\"" + await getVisitorId() + "\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,gzip(gfe)\",\"clientName\":\"WEB_REMIX\",\"clientVersion\":\"1.20231214.00.00\",\"osName\":\"Windows\",\"osVersion\":\"10.0\",\"originalUrl\":\"https://music.youtube.com/?cbrd=1\",\"platform\":\"DESKTOP\",\"clientFormFactor\":\"UNKNOWN_FORM_FACTOR\",\"configInfo\":{\"appInstallData\":\"CJHg6qwGEL2KsAUQqfevBRC8-a8FENPhrwUQt-r-EhDks_4SEOvo_hIQiOOvBRCa8K8FEMeDsAUQiIewBRC--a8FEKuCsAUQr_v-EhDViLAFEPqnsAUQzK7-EhClwv4SEKaBsAUQlPr-EhDnuq8FEJ6LsAUQooGwBRCZlLAFEPyFsAUQqKCwBRC_o7AFELedsAUQ2cmvBRC9mbAFELfvrwUQ0I2wBRDamLAFEKihsAUQ4fKvBRCu1P4SEJj8_hIQyfevBRDrk64FEOeG_xIQvbauBRC4i64FEOrDrwUQ7aKwBRCPorAFEN3o_hIQ9fmvBRD9uP0SEOmMsAUQjaKwBRComrAFEKy3rwUQzN-uBRC7o7AFEM2VsAUQtZuwBRDYpLAF\"},\"browserName\":\"Chrome\",\"browserVersion\":\"120.0.0.0\",\"acceptHeader\":\"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7\",\"deviceExperimentId\":\"ChxOek15TVRNMU56Y3pNalV3TWprek56TXpNQT09EJHg6qwGGJHg6qwG\",\"screenWidthPoints\":660,\"screenHeightPoints\":911,\"screenPixelDensity\":1,\"screenDensityFloat\":1,\"utcOffsetMinutes\":60,\"userInterfaceTheme\":\"USER_INTERFACE_THEME_DARK\",\"connectionType\":\"CONN_CELLULAR_4G\",\"timeZone\":\"Europe/Budapest\",\"playerType\":\"UNIPLAYER\",\"tvAppInfo\":{\"livingRoomAppMode\":\"LIVING_ROOM_APP_MODE_UNSPECIFIED\"},\"clientScreen\":\"WATCH_FULL_SCREEN\"},\"user\":{\"lockedSafetyMode\":false},\"request\":{\"useSsl\":true,\"internalExperimentFlags\":[],\"consistencyTokenJars\":[]},\"clientScreenNonce\":\"MC41MTg1OTYxNjUyMTAwMTIy\",\"adSignalsInfo\":{\"params\":[{\"key\":\"dt\",\"value\":\"1704636448056\"},{\"key\":\"flash\",\"value\":\"0\"},{\"key\":\"frm\",\"value\":\"0\"},{\"key\":\"u_tz\",\"value\":\"60\"},{\"key\":\"u_his\",\"value\":\"3\"},{\"key\":\"u_h\",\"value\":\"1080\"},{\"key\":\"u_w\",\"value\":\"1920\"},{\"key\":\"u_ah\",\"value\":\"1032\"},{\"key\":\"u_aw\",\"value\":\"1920\"},{\"key\":\"u_cd\",\"value\":\"24\"},{\"key\":\"bc\",\"value\":\"31\"},{\"key\":\"bih\",\"value\":\"911\"},{\"key\":\"biw\",\"value\":\"648\"},{\"key\":\"brdim\",\"value\":\"0,0,0,0,1920,0,1920,1032,660,911\"},{\"key\":\"vis\",\"value\":\"1\"},{\"key\":\"wgl\",\"value\":\"true\"},{\"key\":\"ca_type\",\"value\":\"image\"}]},\"clickTracking\":{\"clickTrackingParams\":\"CKkEEMjeAiITCKzS38i5y4MDFS7TQgUdK2gITA==\"}},\"playbackContext\":{\"contentPlaybackContext\":{\"html5Preference\":\"HTML5_PREF_WANTS\",\"lactMilliseconds\":\"19\",\"referer\":\"https://music.youtube.com/\",\"signatureTimestamp\":19725,\"autoCaptionsDefaultOn\":false,\"mdxContext\":{}}},\"cpn\":\"adlWd0k8BoBeEXv5\",\"playlistId\":\"RDAMVMfRyhqobl0sk\",\"captionParams\":{},\"serviceIntegrityDimensions\":{\"poToken\":\"MnR-6_LdJ-ftiH7TggJIPxASYS3Dch2TGvt7M1BMazbbDKo12CoyWtw_rrUjCjPLC3ujCcoqbL2HGSoBcwG133z0OCJlZQg08dTwUPzT8wxxyB7dnp6VsJ7o8wVbSz1rZht-l3GcjAj6duRovRPTrj4oxj3XGw==\"}}",
+            "body": "{ \
+                \"videoId\": \""+ videoId + "\",\
+                \"context\": {\
+                  \"client\": {\
+                    \"clientName\": \"ANDROID_MUSIC\",\
+                    \"clientVersion\": \"5.16.51\",\
+                    \"androidSdkVersion\": 30\
+                  }\
+                }\
+              }",
             "method": "POST",
-            "mode": "cors",
-            "credentials": "include"
         }).then(async (response) => {
             resolved(videoInfoParser(await response.json()))
         });
 
     })
+}
+
+//TODO: remove in production build
+//only for debugging purposes
+window.videoInfo = async (id) => {
+    console.log(await videoInfo(id));
 }
 
 export { fetchRadio, search, suggest, videoInfo }

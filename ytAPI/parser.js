@@ -162,6 +162,7 @@ function digestResultResponse(json) {
                         let type = responsiveMusicItem.navigationEndpoint.browseEndpoint.browseEndpointContextSupportedConfigs.browseEndpointContextMusicConfig.pageType;
                         if (type == "MUSIC_PAGE_TYPE_ARTIST")
                             entry.type = "Artist";
+                        else if (type == "MUSIC_PAGE_TYPE_SONG") entry.type = "Song"
                         else {
                             if (type == "MUSIC_PAGE_TYPE_ALBUM")
                                 entry.type = "Album";

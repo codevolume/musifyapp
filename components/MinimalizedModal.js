@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Svg, { Path } from "react-native-svg";
 import PlayerModal from "../modals/PlayerModal";
 
-const MinimalizedModal = ({ item }) => {
+const MinimalizedModal = ({ item, songInfos }) => {
     const theme = { mode: "dark" };
     let activeColors = Colors[theme.mode];
     const [modalVisible, setModalVisible] = useState(false);

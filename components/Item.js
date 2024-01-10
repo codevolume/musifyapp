@@ -1,5 +1,5 @@
 import { View, Text, Pressable, Image } from "react-native";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Player } from "../contexts/PlayerContext";
 
 const Item = ({ item }) => {
@@ -11,7 +11,7 @@ const Item = ({ item }) => {
         setCurrentTrack(item);
     };
 
-    const isCurrentTrack = currentTrack && currentTrack.title == item.title;
+    const isCurrentTrack = item?.videoId === currentTrack?.videoId;
 
     return (
         <Pressable onPress={handlePress}>

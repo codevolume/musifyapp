@@ -100,7 +100,8 @@ let search = (query) => {
             "mode": "cors",
             "credentials": "include"
         }).then(async (response) => {
-            resolved(digestResultResponse(await response.json()));
+            /* resolved(digestResultResponse(await response.json())); */
+            console.log(digestResultResponse(await response.json()));
         });
     })
 }

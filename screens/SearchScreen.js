@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard, ActivityIndicator } from "react-native";
 import Svg, { Path, Circle } from "react-native-svg";
 import React, { useState, useEffect } from "react";
-import { search, suggest } from "../ytAPI/index";
+import { search, suggest, videoInfo } from "../ytAPI/index";
 import SearchItem from "../components/SearchItem";
 import ArtistItem from "../components/ArtistItem";
 import Item from "../components/Item";
@@ -52,10 +52,6 @@ const SearchScreen = () => {
         }
     };
 
-    useEffect(() => {
-        console.log(searchResult);
-    }, [searchResult]);
-
     return (
         <View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
             <SafeAreaView>
@@ -75,8 +71,6 @@ const SearchScreen = () => {
                 </View>
                 <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 25 }}>
                     {keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}
-                    {/* {keyboardStatus ? null : artists ? <FlatList data={artists} renderItem={({ item }) => <ArtistItem item={item} />} /> : null}
-                    {keyboardStatus ? null : songs ? <FlatList data={songs} renderItem={({ item }) => <Item item={item} />} /> : null} */}
                 </View>
             </SafeAreaView>
         </View>

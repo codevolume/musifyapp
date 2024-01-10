@@ -3,6 +3,8 @@
 //16:43
 //szerintem lassan az elmegyógyban leszek ettől a szartól
 
+let previousResponse = "";
+
 let suggestParser = (response) => {
     return new Promise((resolved) => {
         try {
@@ -154,9 +156,15 @@ function digestResultResponse(json) {
 
                 if (responsiveMusicItem?.navigationEndpoint) {
                     if (responsiveMusicItem.navigationEndpoint?.watchEndpoint) {
-                        entry.type = "Title";
                         entry.playlistId = responsiveMusicItem.navigationEndpoint.watchEndpoint.playlistId;
                         entry.videoId = responsiveMusicItem.navigationEndpoint.watchEndpoint.videoId;
+                        if (entry.playlistId != null) {
+                            entry.type = "Playlist";
+                        }
+
+                        if (entry.videoId != null) {
+                            entry.type = "Song"
+                        }
 
                     } else {
                         let type = responsiveMusicItem.navigationEndpoint.browseEndpoint.browseEndpointContextSupportedConfigs.browseEndpointContextMusicConfig.pageType;
@@ -187,8 +195,6 @@ function digestResultResponse(json) {
                         entry.browseId = responsiveMusicItem.navigationEndpoint.browseEndpoint.browseId;
                     }
                 } else {
-                    entry.type = "Title";
-
                     entry.videoId = responsiveMusicItem.playlistItemData.videoId;
                     let watchEndpoint = responsiveMusicItem.flexColumns[0].musicResponsiveListItemFlexColumnRenderer.text.runs[0].navigationEndpoint.watchEndpoint;
                     if (watchEndpoint) {
@@ -197,6 +203,14 @@ function digestResultResponse(json) {
 
                         if (watchEndpoint.hasOwnProperty("browseId"))
                             entry.browseId = watchEndpoint.browseId;
+                    }
+
+                    if (entry.playlistId != null) {
+                        entry.type = "Playlist";
+                    }
+
+                    if (entry.videoId != null) {
+                        entry.type = "Song"
                     }
                 }
 

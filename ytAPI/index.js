@@ -19,7 +19,6 @@ function getVisitorId() {
 }
 
 const key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30";
-let previousResponse = "";
 
 import { digestResultResponse, suggestParser, videoInfoParser } from "./parser";
 
@@ -195,6 +194,10 @@ let videoInfo = (videoId) => {
 //only for debugging purposes
 window.videoInfo = async (id) => {
     console.log(await videoInfo(id));
+}
+
+window.fos = async (q) => {
+    console.log(await search(q));
 }
 
 export { fetchRadio, search, suggest, videoInfo }

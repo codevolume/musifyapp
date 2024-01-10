@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard, ActivityIndicator } from "react-native";
+import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard, ActivityIndicator, TouchableOpacity } from "react-native";
 import Svg, { Path, Circle } from "react-native-svg";
 import React, { useState, useEffect } from "react";
 import { search, suggest } from "../ytAPI/index";
@@ -31,18 +31,27 @@ const SearchScreen = () => {
     }, []);
 
     let searchSuggest = (text) => {
-        suggest(text).then((suggestionArray) => {
-            if (!text.trim()) {
+        suggest(searchText).then((suggestionArray) => {
+            if (!searchText.trim()) {
                 setSuggestions([]);
             } else setSuggestions(suggestionArray);
         });
-        setSearchText(text);
     };
 
-    let submitSearch = async () => {
+
+    let submitSearch = async (q = null) => {
         try {
             setIsLoading(true);
-            const res = await search(searchText);
+            let res;
+            
+            if (q == null) {
+                console.log(q)
+                res = await search(searchText);
+            } else {
+                console.log(searchText)
+                setSearchText(q);
+                res = await search(q);
+            }
 
             setSearchResult(res);
         } catch (e) {
@@ -52,9 +61,6 @@ const SearchScreen = () => {
         }
     };
 
-    useEffect(() => {
-        console.log(searchResult);
-    }, [searchResult]);
 
     return (
         <View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
@@ -66,7 +72,7 @@ const SearchScreen = () => {
                             <Path d="M20 20L17 17" stroke={activeColors.hue11} stroke-width="2" stroke-linecap="round" />
                         </Svg>
 
-                        <TextInput placeholder="Search for something..." onChangeText={searchSuggest} value={searchText} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} />
+                        <TextInput placeholder="Search for something..." onKeyPress={searchSuggest} onChangeText={setSearchText} value={searchText} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} />
                     </View>
 
                     <View style={{ backgroundColor: "#0b3b2c", width: 48, height: 48, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>
@@ -74,7 +80,7 @@ const SearchScreen = () => {
                     </View>
                 </View>
                 <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 25 }}>
-                    {keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}
+                    {keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} searchText={searchText} setSearchText={setSearchText} submit={submitSearch} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}
                     {/* {keyboardStatus ? null : artists ? <FlatList data={artists} renderItem={({ item }) => <ArtistItem item={item} />} /> : null}
                     {keyboardStatus ? null : songs ? <FlatList data={songs} renderItem={({ item }) => <Item item={item} />} /> : null} */}
                 </View>

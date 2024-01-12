@@ -99,8 +99,7 @@ let search = (query) => {
             "mode": "cors",
             "credentials": "include"
         }).then(async (response) => {
-            /* resolved(digestResultResponse(await response.json())); */
-            console.log(digestResultResponse(await response.json()));
+            resolved(digestResultResponse(await response.json()));
         });
     })
 }
@@ -195,10 +194,6 @@ let videoInfo = (videoId) => {
 //only for debugging purposes
 window.videoInfo = async (id) => {
     console.log(await videoInfo(id));
-}
-
-window.fos = async (q) => {
-    console.log(await search(q));
 }
 
 export { fetchRadio, search, suggest, videoInfo }

@@ -2,19 +2,11 @@ import { View, Text, Pressable } from "react-native";
 import React from "react";
 import Svg, { Path, Circle } from "react-native-svg";
 
-const SearchItem = ({ item, searchText, setSearchText, submit }) => {
+const SearchItem = ({ item }) => {
     const theme = { mode: "dark" };
     let activeColors = Colors[theme.mode];
 
-    
-    const handleSuggestPress = (text) => {
-        setSearchText(text);
-        submit(text);
-        console.log(text)
-    }
-
     return (
-        <Pressable onPress={() => handleSuggestPress(item)}>
 
             <View style={{ flexDirection: "row", gap: 11, justifyContent: "space-between", alignItems: "center", paddingVertical: 6, width: "100%" }}>
                 <View style={{ flexDirection: "row", gap: 16 }}>
@@ -34,7 +26,6 @@ const SearchItem = ({ item, searchText, setSearchText, submit }) => {
                     </Svg>
                 </View>
             </View>
-        </Pressable>
     )
 };
 

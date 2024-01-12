@@ -2,47 +2,56 @@
 
     {
         "id": 1,
-        "singer": "VZS",
-        "title": "Jamaica Pt. 1"
+        "subtitle": "VZS",
+        "title": "Jamaica Pt. 1",
+        "artist": "VZS"
     },
     {
         "id": 2,
-        "singer": "Pogány Induló",
-        "title": "Pogi Hip-Hop"
+        "subtitle": "Pogány Induló",
+        "title": "Pogi Hip-Hop",
+        "artist": "Pogány Induló"
     },
     {
         "id": 3,
-        "singer": "Grasa",
-        "title": "Tilidin"
+        "subtitle": "Grasa",
+        "title": "Tilidin",
+        "artist": "Grasa"
     },
     {
         "id": 4,
-        "singer": "Ekhoe, YaBalka",
-        "title": "My eyes only"
+        "subtitle": "Ekhoe, YaBalka",
+        "title": "My eyes only",
+        "artist": "Ekhoe és YaBalka"
     },
     {
         "id": 5,
-        "singer": "Ótvar Pestis, Pogány Induló",
-        "title": "vihar előtt ft. Pogány induló"
+        "subtitle": "Ótvar Pestis, Pogány Induló",
+        "title": "vihar előtt ft. Pogány induló",
+        "artist": "Ótvar Pestis és Pogány Induló"
     },
     {
         "id": 6,
-        "singer": "Manuel, Ekhoe",
-        "title": "Legenda (feat. Ekhoe)"
+        "subtitle": "Manuel, Ekhoe",
+        "title": "Legenda (feat. Ekhoe)",
+        "artist": "Manuel és Ekhoe"
     },
     {
         "id": 7,
-        "singer": "Pop Smoke",
-        "title": "Dior"
+        "subtitle": "Pop Smoke",
+        "title": "Dior",
+        "artist": "Pop Smoke"
     },
     {
         "id": 8,
-        "singer": "VZS",
-        "title": "Gurulgatok"
+        "subtitle": "VZS",
+        "title": "Gurulgatok",
+        "artist": "VZS"
     },
     {
         "id": 9,
-        "singer": "Bruno X Spacc",
-        "title": "Ördög Nórika"
+        "subtitle": "Bruno X Spacc",
+        "title": "Ördög Nórika",
+        "artist": "Bruno X Spacc"
     }
 ]

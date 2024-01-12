@@ -13,6 +13,10 @@ const Item = ({ item }) => {
 
     const isCurrentTrack = item?.videoId === currentTrack?.videoId;
 
+    /*     useEffect(() => {
+        console.log(item);
+    }, [item])
+ */
     return (
         <Pressable onPress={handlePress}>
             <View style={{ alignItems: "center" }}>

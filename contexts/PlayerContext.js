@@ -13,6 +13,10 @@ const PlayerContext = ({ children }) => {
         videoInfo(currentTrack?.videoId).then((res) => setSongInfos(res));
     }, [currentTrack]);
 
+    useEffect(() => {
+        console.log(songInfos);
+    }, [songInfos])
+
     return (
         <>
             {currentTrack && <MinimalizedModal item={currentTrack} songInfos={songInfos} />}

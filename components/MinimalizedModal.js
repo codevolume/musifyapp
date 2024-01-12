@@ -25,7 +25,7 @@ const MinimalizedModal = ({ item, songInfos }) => {
                                 <Text style={{ fontSize: 16, fontWeight: "500", color: activeColors.hue12 }} numberOfLines={1}>
                                     {item.title}
                                 </Text>
-                                <Text style={{ fontSize: 12, color: activeColors.hue11 }}>{item.subtitle}</Text>
+                                <Text style={{ fontSize: 12, color: activeColors.hue11 }}>{songInfos?.author}</Text>
                             </View>
                         </View>
 
@@ -47,7 +47,7 @@ const MinimalizedModal = ({ item, songInfos }) => {
                 </TouchableOpacity>
             </View>
 
-            {modalVisible ? <PlayerModal item={item} modalVisible={modalVisible} setModalVisible={setModalVisible} /> : null}
+            {modalVisible ? <PlayerModal item={item} modalVisible={modalVisible} songInfos={songInfos} setModalVisible={setModalVisible} /> : null}
         </>
     );
 };

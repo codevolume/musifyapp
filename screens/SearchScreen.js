@@ -31,27 +31,18 @@ const SearchScreen = () => {
     }, []);
 
     let searchSuggest = (text) => {
-        suggest(searchText).then((suggestionArray) => {
-            if (!searchText.trim()) {
+        suggest(text).then((suggestionArray) => {
+            if (!text.trim()) {
                 setSuggestions([]);
             } else setSuggestions(suggestionArray);
         });
+        setSearchText(text);
     };
 
-
-    let submitSearch = async (q = null) => {
+    let submitSearch = async () => {
         try {
             setIsLoading(true);
-            let res;
-            
-            if (q == null) {
-                console.log(q)
-                res = await search(searchText);
-            } else {
-                console.log(searchText)
-                setSearchText(q);
-                res = await search(q);
-            }
+            const res = await search(searchText);
 
             setSearchResult(res);
         } catch (e) {
@@ -61,10 +52,6 @@ const SearchScreen = () => {
         }
     };
 
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/master
     return (
         <View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
             <SafeAreaView>
@@ -74,23 +61,15 @@ const SearchScreen = () => {
                             <Circle cx="11" cy="11" r="7" stroke={activeColors.hue11} stroke-width="2" />
                             <Path d="M20 20L17 17" stroke={activeColors.hue11} stroke-width="2" stroke-linecap="round" />
                         </Svg>
-
-                        <TextInput placeholder="Search for something..." onKeyPress={searchSuggest} onChangeText={setSearchText} value={searchText} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} />
+                        <TextInput placeholder="Search for something..." onChangeText={searchSuggest} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} />
+                        {/* <TextInput placeholder="Search for something..." onChangeText={(text) => {searchSuggest; setSearchText(text)}} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} /> */}
                     </View>
 
                     <View style={{ backgroundColor: "#0b3b2c", width: 48, height: 48, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>
                         <Text style={{ fontSize: 20, fontWeight: "bold", color: "#1fd8a4" }}>Sz</Text>
                     </View>
                 </View>
-                <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 25 }}>
-<<<<<<< HEAD
-                    {keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}
-=======
-                    {keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} searchText={searchText} setSearchText={setSearchText} submit={submitSearch} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}
-                    {/* {keyboardStatus ? null : artists ? <FlatList data={artists} renderItem={({ item }) => <ArtistItem item={item} />} /> : null}
-                    {keyboardStatus ? null : songs ? <FlatList data={songs} renderItem={({ item }) => <Item item={item} />} /> : null} */}
->>>>>>> refs/remotes/origin/master
-                </View>
+                <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 25 }}>{keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}</View>
             </SafeAreaView>
         </View>
     );

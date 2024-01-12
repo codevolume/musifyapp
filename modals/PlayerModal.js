@@ -1,18 +1,14 @@
 import { View, Text, Pressable, Modal, Image, SafeAreaView, ImageBackground } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Svg, { Path } from "react-native-svg";
 
-const PlayerModal = ({ item, modalVisible, setModalVisible }) => {
-    useEffect(() => {
-        videoInfo(currentTrack?.videoId).then((res) => setSongInfos(res));
-    }, [currentTrack]);
-
+const PlayerModal = ({ modalVisible, setModalVisible, songInfos }) => {
     return (
         <View>
             <Modal visible={modalVisible} onRequestClose={() => setModalVisible(false)} animationType="slide" presentationStyle="fullScreen">
                 <View style={{ flex: 1, backgroundColor: "#000" }}>
-                    <ImageBackground source={{ uri: item?.coverPhoto?.url }} resizeMode="cover" blurRadius={50} imageStyle={{ opacity: 0.2 }}>
+                    <ImageBackground source={{ uri: songInfos?.coverPhoto?.url }} resizeMode="cover" blurRadius={50} imageStyle={{ opacity: 0.2 }}>
                         <StatusBar style="light" />
                         <SafeAreaView>
                             <View style={{ paddingHorizontal: 25, paddingTop: 20 }}>
@@ -23,10 +19,10 @@ const PlayerModal = ({ item, modalVisible, setModalVisible }) => {
                                 </Pressable>
                             </View>
                             <View style={{ paddingHorizontal: 25, justifyContent: "center", height: "100%", paddingBottom: 200 }}>
-                                <Image source={{ uri: item.coverPhoto }} style={{ width: "100%", borderRadius: 6, height: 360 }} resizeMode="contain" />
+                                <Image source={{ uri: songInfos?.coverPhoto.url }} style={{ width: "100%", borderRadius: 6, height: 360 }} resizeMode="cover" />
                                 <View style={{ paddingTop: 20, gap: 10 }}>
-                                    <Text style={{ fontSize: 24, fontWeight: "bold", color: "#fff" }}>{item?.title}</Text>
-                                    <Text style={{ fontSize: 16, color: "#b4b4b4" }}>{item?.author}</Text>
+                                    <Text style={{ fontSize: 24, fontWeight: "bold", color: "#fff" }}>{songInfos?.title}</Text>
+                                    <Text style={{ fontSize: 16, color: "#b4b4b4" }}>{songInfos?.author}</Text>
                                 </View>
 
                                 <View style={{ width: "100%", flexDirection: "row", justifyContent: "space-between", paddingTop: 20 }}>

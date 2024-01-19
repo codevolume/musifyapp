@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useContext, useEffect } from "react";
 import { Player } from "../contexts/PlayerContext";
 
@@ -8,18 +8,16 @@ const Item = ({ item }) => {
     const { currentTrack, setCurrentTrack } = useContext(Player);
 
     const handlePress = () => {
-        setCurrentTrack(item);
+        item.type === "Artist" ? null : setCurrentTrack(item);
     };
+
 
     const isCurrentTrack = item?.videoId === currentTrack?.videoId;
 
-    /*     useEffect(() => {
-        console.log(item);
-    }, [item])
- */
+
     return (
-        <Pressable onPress={handlePress}>
-            <View style={{ alignItems: "center" }}>
+        <TouchableOpacity onPress={handlePress}>
+            <View style={{ alignItems: "center", backgroundColor: isCurrentTrack ? activeColors.hue6 : null, paddingHorizontal: 15, borderRadius: 4}}>
                 <View style={{ flexDirection: "row", gap: 11, alignItems: "center", paddingVertical: 6, width: "100%" }}>
                     {item.thumbnail ? (
                         <Image source={{ uri: item.thumbnail }} style={{ width: 48, height: 48, borderRadius: item.type === "Artist" ? 50 : 8 }} />
@@ -35,7 +33,7 @@ const Item = ({ item }) => {
                     {isCurrentTrack ? <Image source={require("../assets/eq.gif")} style={{ height: 20, width: 20 }} /> : null}
                 </View>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

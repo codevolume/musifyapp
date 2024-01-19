@@ -142,7 +142,7 @@ function fetchRadio(videoId) {
             body: body,
             "method": "POST"
         }).then(async (response) => {
-            console.log(response.status, response.statusText);
+            /* console.log(response.status, response.statusText); */
             let restext = JSON.parse(await response.text());
             let res = restext["contents"]["singleColumnMusicWatchNextResultsRenderer"]["tabbedRenderer"]["watchNextTabbedResultsRenderer"]["tabs"][0]["tabRenderer"]["content"]["musicQueueRenderer"]["content"]["playlistPanelRenderer"]["contents"]
             //console.log(res);
@@ -192,8 +192,8 @@ let videoInfo = (videoId) => {
 
 //TODO: remove in production build
 //only for debugging purposes
-window.videoInfo = async (id) => {
+/* window.videoInfo = async (id) => {
     console.log(await videoInfo(id));
-}
+} */
 
 export { fetchRadio, search, suggest, videoInfo }

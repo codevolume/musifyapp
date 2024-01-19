@@ -1,22 +1,23 @@
-import { View, Text, Pressable, Modal, Image, SafeAreaView, ImageBackground } from "react-native";
+import { View, Text, TouchableOpacity, Modal, Image, SafeAreaView, ImageBackground, Animated } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import Svg, { Path } from "react-native-svg";
+import GestureRecognizer from "react-native-swipe-gestures";
 
 const PlayerModal = ({ modalVisible, setModalVisible, songInfos }) => {
     return (
-        <View>
-            <Modal visible={modalVisible} onRequestClose={() => setModalVisible(false)} animationType="slide" presentationStyle="fullScreen">
-                <View style={{ flex: 1, backgroundColor: "#000" }}>
+        <GestureRecognizer style={{flex: 1}} onSwipeDown={() => setModalVisible(false)}>
+            <Modal visible={modalVisible} animationType="slide" presentationStyle="fullScreen">
+                <Animated.View style={{ flex: 1, backgroundColor: "#000" }}>
                     <ImageBackground source={{ uri: songInfos?.coverPhoto?.url }} resizeMode="cover" blurRadius={50} imageStyle={{ opacity: 0.2 }}>
                         <StatusBar style="light" />
                         <SafeAreaView>
                             <View style={{ paddingHorizontal: 25, paddingTop: 20 }}>
-                                <Pressable onPress={() => setModalVisible(false)}>
+                                <TouchableOpacity onPress={() => setModalVisible(false)}>
                                     <Svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none">
                                         <Path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </Svg>
-                                </Pressable>
+                                </TouchableOpacity>
                             </View>
                             <View style={{ paddingHorizontal: 25, justifyContent: "center", height: "100%", paddingBottom: 200 }}>
                                 <Image source={{ uri: songInfos?.coverPhoto.url }} style={{ width: "100%", borderRadius: 6, height: 360 }} resizeMode="cover" />
@@ -73,9 +74,9 @@ const PlayerModal = ({ modalVisible, setModalVisible, songInfos }) => {
                             </View>
                         </SafeAreaView>
                     </ImageBackground>
-                </View>
+                </Animated.View>
             </Modal>
-        </View>
+        </GestureRecognizer>
     );
 };
 

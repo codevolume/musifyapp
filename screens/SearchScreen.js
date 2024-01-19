@@ -69,7 +69,7 @@ const SearchScreen = () => {
                         <Text style={{ fontSize: 20, fontWeight: "bold", color: "#1fd8a4" }}>Sz</Text>
                     </View>
                 </View>
-                <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 25 }}>{keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}</View>
+                <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 10 }}>{keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}</View>
             </SafeAreaView>
         </View>
     );

@@ -15,6 +15,10 @@ const Test = ({ item }) => {
         setArtists(item?.filter((shelf) => shelf.title === "Artists")[0]?.data);
     }, [item]);
 
+    useEffect(() => {
+        console.log(item)
+    }, [item])
+
     const renderItem = ({ item }) => {
         return <Item item={item} />;
     };

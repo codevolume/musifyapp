@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Svg, { Path } from "react-native-svg";
 
 import HomeScreen from "../screens/HomeScreen";
@@ -8,11 +8,12 @@ import LibaryScreen from "../screens/LibaryScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Tab = createBottomTabNavigator();
 
 function BottomTabs() {
-    const theme = { mode: "dark" };
+    const {theme} = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
     return (
         <Tab.Navigator

@@ -1,10 +1,11 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Svg, { Path } from "react-native-svg";
 import PlayerModal from "../modals/PlayerModal";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const MinimalizedModal = ({ item, songInfos, play }) => {
-    const theme = { mode: "dark" };
+    const {theme} = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
     const [modalVisible, setModalVisible] = useState(false);
 

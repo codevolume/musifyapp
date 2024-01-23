@@ -1,9 +1,10 @@
 import { View, Text, Pressable } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import Svg, { Path, Circle } from "react-native-svg";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const SearchItem = ({ item }) => {
-    const theme = { mode: "dark" };
+    const {theme} = useContext(ThemeContext)
     let activeColors = Colors[theme.mode];
 
     return (

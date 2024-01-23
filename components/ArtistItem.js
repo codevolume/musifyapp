@@ -1,8 +1,8 @@
 import { View, Text, Image } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 
 const ArtistItem = ({ item }) => {
-    const theme = { mode: "dark" };
+    const {theme} = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
     console.log("Item: " + item);
     return (

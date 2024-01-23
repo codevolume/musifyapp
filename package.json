@@ -24,7 +24,10 @@
     "react-native-svg": "13.9.0",
     "react-native-swipe-gestures": "^1.0.5",
     "react-native-virtualized-view": "^1.0.0",
-    "expo-blur": "~12.4.1"
+    "expo-blur": "~12.4.1",
+    "react-native-web": "~0.19.6",
+    "react-dom": "18.2.0",
+    "@expo/webpack-config": "^19.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

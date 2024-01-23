@@ -1,15 +1,16 @@
 import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard, ActivityIndicator, TouchableOpacity } from "react-native";
 import Svg, { Path, Circle } from "react-native-svg";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { search, suggest, videoInfo } from "../ytAPI/index";
 import SearchItem from "../components/SearchItem";
 import ArtistItem from "../components/ArtistItem";
 import Item from "../components/Item";
 import Test from "../TestData";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 // valami
 const SearchScreen = () => {
-    const theme = { mode: "dark" };
+    const {theme} = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
 
     const [keyboardStatus, setKeyboardStatus] = useState(false);

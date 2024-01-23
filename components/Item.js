@@ -1,9 +1,10 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useContext, useEffect } from "react";
 import { Player } from "../contexts/PlayerContext";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Item = ({ item }) => {
-    const theme = { mode: "dark" };
+    const {theme} = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
     const { currentTrack, setCurrentTrack } = useContext(Player);
 
@@ -17,7 +18,7 @@ const Item = ({ item }) => {
 
     return (
         <TouchableOpacity onPress={handlePress}>
-            <View style={{ alignItems: "center", backgroundColor: isCurrentTrack ? activeColors.hue6 : null, paddingHorizontal: 15, borderRadius: 4}}>
+            <View style={{ alignItems: "center", paddingHorizontal: 15, borderRadius: 4}}>
                 <View style={{ flexDirection: "row", gap: 11, alignItems: "center", paddingVertical: 6, width: "100%" }}>
                     {item.thumbnail ? (
                         <Image source={{ uri: item.thumbnail }} style={{ width: 48, height: 48, borderRadius: item.type === "Artist" ? 50 : 8 }} />

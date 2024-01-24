@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 const CategoryItem = ({ item }) => {
-    const {theme} = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
 
     return (

@@ -5,7 +5,7 @@ import PlayerModal from "../modals/PlayerModal";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 const MinimalizedModal = ({ item, songInfos, play }) => {
-    const {theme} = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -23,8 +23,7 @@ const MinimalizedModal = ({ item, songInfos, play }) => {
                                 </View>
                             )}
 
-                            {/* TODO: animation for overflow */}
-                            <View style={{flex: 1}}>
+                            <View style={{ flex: 1 }}>
                                 <Text style={{ fontSize: 16, fontWeight: "500", color: activeColors.hue12 }} numberOfLines={1}>
                                     {item.title}
                                 </Text>

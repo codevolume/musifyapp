@@ -2,9 +2,10 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useContext, useEffect } from "react";
 import { Player } from "../contexts/PlayerContext";
 import { ThemeContext } from "../contexts/ThemeContext";
+import Svg, { Circle } from "react-native-svg";
 
 const Item = ({ item }) => {
-    const {theme} = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
     const { currentTrack, setCurrentTrack } = useContext(Player);
 
@@ -12,13 +13,11 @@ const Item = ({ item }) => {
         item.type === "Artist" ? null : setCurrentTrack(item);
     };
 
-
     const isCurrentTrack = item?.videoId === currentTrack?.videoId;
-
 
     return (
         <TouchableOpacity onPress={handlePress}>
-            <View style={{ alignItems: "center", paddingHorizontal: 15, borderRadius: 4}}>
+            <View style={{ alignItems: "center", paddingHorizontal: 15, borderRadius: 4, justifyContent: "space-between", flexDirection: "row", width: 300 }}>
                 <View style={{ flexDirection: "row", gap: 11, alignItems: "center", paddingVertical: 6, width: "100%" }}>
                     {item.thumbnail ? (
                         <Image source={{ uri: item.thumbnail }} style={{ width: 48, height: 48, borderRadius: item.type === "Artist" ? 50 : 8 }} />
@@ -32,6 +31,13 @@ const Item = ({ item }) => {
                         <Text style={{ fontSize: 12, color: activeColors.hue11 }}>{item.subtitle}</Text>
                     </View>
                     {isCurrentTrack ? <Image source={require("../assets/eq.gif")} style={{ height: 20, width: 20 }} /> : null}
+                </View>
+                <View>
+                    <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <Circle cx="12" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
+                        <Circle cx="6" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
+                        <Circle cx="18" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
+                    </Svg>
                 </View>
             </View>
         </TouchableOpacity>

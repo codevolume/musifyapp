@@ -6,6 +6,7 @@ import Item from "../components/Item";
 import CategoryItem from "../components/CategoryItem";
 import Colors from "../constans/Colors";
 import { ThemeContext } from "../contexts/ThemeContext";
+import Profile from "../components/Profile";
 
 const HomeScreen = () => {
     const [settingModal, setSettingModal] = useState(false);
@@ -50,11 +51,7 @@ const HomeScreen = () => {
                 <SafeAreaView>
                     <View style={{ flexDirection: "row", width: "100%", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center", paddingVertical: 15, paddingTop: Platform.OS === "android" ? 35 : null }}>
                         <Text style={{ fontSize: 24, fontWeight: "bold", color: activeColors.hue12 }}>Good Afternoon!</Text>
-                        <TouchableOpacity onPress={() => setSettingModal(true)}>
-                            <View style={{ backgroundColor: "#0b3b2c", width: 48, height: 48, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>
-                                <Text style={{ fontSize: 20, fontWeight: "bold", color: "#1fd8a4" }}>Sz</Text>
-                            </View>
-                        </TouchableOpacity>
+                        <Profile />
                     </View>
 
                     <View style={{ height: "100%", backgroundColor: activeColors.hue1 }}>

@@ -1,16 +1,14 @@
-import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard, ActivityIndicator, TouchableOpacity } from "react-native";
-import Svg, { Path, Circle } from "react-native-svg";
 import React, { useState, useEffect, useContext } from "react";
-import { search, suggest, videoInfo } from "../ytAPI/index";
-import SearchItem from "../components/SearchItem";
-import ArtistItem from "../components/ArtistItem";
-import Item from "../components/Item";
-import Test from "../TestData";
+import { View, Text, SafeAreaView, TextInput, FlatList, Keyboard, ActivityIndicator, TouchableOpacity } from "react-native";
+import { search, suggest } from "../ytAPI/index";
 import { ThemeContext } from "../contexts/ThemeContext";
+import Svg, { Path, Circle } from "react-native-svg";
+import SearchItem from "../components/SearchItem";
+import Test from "../TestData";
+import Profile from "../components/Profile";
 
-// valami
 const SearchScreen = () => {
-    const {theme} = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
     let activeColors = Colors[theme.mode];
 
     const [keyboardStatus, setKeyboardStatus] = useState(false);
@@ -66,9 +64,7 @@ const SearchScreen = () => {
                         {/* <TextInput placeholder="Search for something..." onChangeText={(text) => {searchSuggest; setSearchText(text)}} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} /> */}
                     </View>
 
-                    <View style={{ backgroundColor: "#0b3b2c", width: 48, height: 48, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{ fontSize: 20, fontWeight: "bold", color: "#1fd8a4" }}>Sz</Text>
-                    </View>
+                    <Profile />
                 </View>
                 <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 10 }}>{keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: "white" }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}</View>
             </SafeAreaView>

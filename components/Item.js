@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useContext, useEffect } from "react";
 import { Player } from "../contexts/PlayerContext";
 import { ThemeContext } from "../contexts/ThemeContext";
-import Svg, { Circle } from "react-native-svg";
+import Svg, { Circle, Path } from "react-native-svg";
 
 const Item = ({ item }) => {
     const { theme } = useContext(ThemeContext);
@@ -33,11 +33,17 @@ const Item = ({ item }) => {
                     {isCurrentTrack ? <Image source={require("../assets/eq.gif")} style={{ height: 20, width: 20 }} /> : null}
                 </View>
                 <View>
-                    <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <Circle cx="12" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
-                        <Circle cx="6" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
-                        <Circle cx="18" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
-                    </Svg>
+                    {item.type === "Song" ? (
+                        <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <Circle cx="12" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
+                            <Circle cx="6" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
+                            <Circle cx="18" cy="12" r="1" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
+                        </Svg>
+                    ) : (
+                        <Svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <Path d="M9 6L15 12L9 18" stroke="#33363F" stroke-width="2" />
+                        </Svg>
+                    )}
                 </View>
             </View>
         </TouchableOpacity>

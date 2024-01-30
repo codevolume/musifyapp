@@ -8,6 +8,7 @@ import Colors from "../constans/Colors";
 import { ThemeContext } from "../contexts/ThemeContext";
 import Profile from "../components/Profile";
 
+
 const HomeScreen = () => {
     const [settingModal, setSettingModal] = useState(false);
     const [refresh, setRefresh] = useState(false);
@@ -24,7 +25,6 @@ const HomeScreen = () => {
     useEffect(() => {
         const chunkSize = 4;
         const newDataHolder = [];
-
         for (let i = 0; i < Data.length; i += chunkSize) {
             newDataHolder.push(Data.slice(i, i + chunkSize));
         }

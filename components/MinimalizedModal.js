@@ -11,7 +11,7 @@ const MinimalizedModal = ({ item, songInfos, play }) => {
 
     return (
         <>
-            <View style={{ position: "absolute", bottom: Platform.OS === "android" ? 60 : 78, left: 0, right: 0, zIndex: 1 }}>
+            <View style={{ position: "absolute", bottom: 78, left: 0, right: 0, zIndex: 1 }}>
                 <TouchableOpacity onPress={() => setModalVisible(true)}>
                     <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: activeColors.hue2, paddingHorizontal: 25, paddingVertical: 12 }}>
                         <View style={{ flexDirection: "row", alignItems: "center", gap: 11, flexShrink: 2 }}>

@@ -61,7 +61,6 @@ const SearchScreen = () => {
                             <Path d="M20 20L17 17" stroke={activeColors.hue11} stroke-width="2" stroke-linecap="round" />
                         </Svg>
                         <TextInput placeholder="Search for something..." onChangeText={searchSuggest} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} />
-                        {/* <TextInput placeholder="Search for something..." onChangeText={(text) => {searchSuggest; setSearchText(text)}} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} /> */}
                     </View>
 
                     <Profile />

@@ -19,7 +19,6 @@ const ProfileModal = () => {
         updateTheme();
         try {
             await AsyncStorage.setItem("colormode", value ? "light" : "dark");
-            console.log(await AsyncStorage.getItem("colormode"));
         } catch (err) {
             console.log(err);
         }
@@ -52,7 +51,7 @@ const ProfileModal = () => {
                                 <Text style={{ fontSize: 20, fontWeight: "bold", color: activeColors.hue12 }}>Megjelenés</Text>
                                 <View style={{ gap: 18 }}>
                                     <Pressable>
-                                        <View style={{ backgroundColor: activeColors.hue2, width: "100%", paddingVertical: 16, paddingHorizontal: 16, borderRadius: 6, flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <View style={{ backgroundColor: activeColors.hue4, width: "100%", paddingVertical: 16, paddingHorizontal: 16, borderRadius: 6, flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                             <View style={{flexDirection: "row", alignItems: "center", gap: 10}}>
                                                 <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <Circle cx="12" cy="12" r="9" stroke={activeColors.hue12} stroke-width="2" />

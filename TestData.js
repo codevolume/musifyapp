@@ -10,14 +10,17 @@ const Test = ({ item }) => {
     const [songs, setSongs] = useState([]);
     const [artists, setArtists] = useState([]);
 
-    useEffect(() => {
-        setSongs(item?.filter((shelf) => shelf.title === "Songs")[0]?.data);
-        setArtists(item?.filter((shelf) => shelf.title === "Artists")[0]?.data);
-    }, [item]);
+    const [searchResult, setSearchResult] = useState([]);
 
     useEffect(() => {
-        console.log(item)
-    }, [item])
+        const sum = [];
+        sum.push(item?.filter((shelf) => shelf.title === "Songs")[0]?.data);
+        setSongs(item?.filter((shelf) => shelf.title === "Songs")[0]?.data);
+        sum.push(item?.filter((shelf) => shelf.title === "Artists")[0]?.data);
+        setArtists(item?.filter((shelf) => shelf.title === "Artists")[0]?.data);
+
+        setSearchResult(sum);
+    }, [item]);
 
     const renderItem = ({ item }) => {
         return <Item item={item} />;
@@ -25,6 +28,12 @@ const Test = ({ item }) => {
 
     return (
         <View>
+{/*             {searchResult ? (
+                <>
+                    <Text style={{ color: "white" }}>All</Text>
+                    <FlatList data={searchResult} keyExtractor={(item, index) => index.toString()} renderItem={renderItem} />
+                </>
+            ) : null} */}
             {artists ? (
                 <>
                     <Text style={{ color: "white" }}>Artists</Text>

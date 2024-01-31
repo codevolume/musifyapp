@@ -27,9 +27,9 @@
     "react-native-screens": "~3.22.0",
     "react-native-svg": "13.9.0",
     "react-native-swipe-gestures": "^1.0.5",
-    "react-native-track-player": "^4.0.1",
     "react-native-virtualized-view": "^1.0.0",
-    "react-native-web": "~0.19.6"
+    "react-native-web": "~0.19.6",
+    "expo-av": "~13.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

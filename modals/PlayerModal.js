@@ -20,7 +20,7 @@ const PlayerModal = ({ modalVisible, setModalVisible, songInfos }) => {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ paddingHorizontal: 25, justifyContent: "center", height: "100%", paddingBottom: 200 }}>
-                                <Image source={{ uri: songInfos?.coverPhoto.url }} style={{ width: "100%", borderRadius: 6, height: 360 }} resizeMode="cover" />
+                                <Image source={{ uri: songInfos?.coverPhoto?.url }} style={{ width: "100%", borderRadius: 6, height: 360 }} resizeMode="cover" />
                                 <View style={{ paddingTop: 20, gap: 10 }}>
                                     <Text style={{ fontSize: 24, fontWeight: "bold", color: "#fff" }}>{songInfos?.title}</Text>
                                     <Text style={{ fontSize: 16, color: "#b4b4b4" }}>{songInfos?.author}</Text>

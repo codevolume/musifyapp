@@ -1,0 +1,161 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.musify"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:3:5-67
+11-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:3:22-64
+12    <uses-permission android:name="android.permission.WAKE_LOCK" />
+12-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-68
+12-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-65
+13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+13-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
+13-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-74
+14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+14-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-92
+14-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-89
+15    <!--
+16    This manifest file is used only by Gradle to configure debug-only capabilities
+17    for React Native Apps.
+18    -->
+19    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+19-->[com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:16:5-78
+19-->[com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:16:22-75
+20    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+20-->[com.facebook.flipper:flipper:0.201.0] /home/szilveszter/.gradle/caches/transforms-3/9b2c28bd5719adb7e465469e2ca76c12/transformed/jetified-flipper-0.201.0/AndroidManifest.xml:14:5-76
+20-->[com.facebook.flipper:flipper:0.201.0] /home/szilveszter/.gradle/caches/transforms-3/9b2c28bd5719adb7e465469e2ca76c12/transformed/jetified-flipper-0.201.0/AndroidManifest.xml:14:22-73
+21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+21-->[com.google.android.exoplayer:exoplayer-core:2.19.0] /home/szilveszter/.gradle/caches/transforms-3/48b0d47373bd8f7d29d4a2a2607bd19d/transformed/jetified-exoplayer-core-2.19.0/AndroidManifest.xml:24:5-79
+21-->[com.google.android.exoplayer:exoplayer-core:2.19.0] /home/szilveszter/.gradle/caches/transforms-3/48b0d47373bd8f7d29d4a2a2607bd19d/transformed/jetified-exoplayer-core-2.19.0/AndroidManifest.xml:24:22-76
+22
+23    <permission
+23-->[androidx.core:core:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+24        android:name="com.musify.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+24-->[androidx.core:core:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+25        android:protectionLevel="signature" />
+25-->[androidx.core:core:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+26
+27    <uses-permission android:name="com.musify.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+27-->[androidx.core:core:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+27-->[androidx.core:core:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+28
+29    <queries>
+29-->[androidx.test:runner:1.4.0] /home/szilveszter/.gradle/caches/transforms-3/4b85a2f84e3f8416644fe2e347c4be9e/transformed/runner-1.4.0/AndroidManifest.xml:24:5-28:15
+30        <package android:name="androidx.test.orchestrator" />
+30-->[androidx.test:runner:1.4.0] /home/szilveszter/.gradle/caches/transforms-3/4b85a2f84e3f8416644fe2e347c4be9e/transformed/runner-1.4.0/AndroidManifest.xml:25:9-62
+30-->[androidx.test:runner:1.4.0] /home/szilveszter/.gradle/caches/transforms-3/4b85a2f84e3f8416644fe2e347c4be9e/transformed/runner-1.4.0/AndroidManifest.xml:25:18-59
+31        <package android:name="androidx.test.services" />
+31-->[androidx.test:runner:1.4.0] /home/szilveszter/.gradle/caches/transforms-3/4b85a2f84e3f8416644fe2e347c4be9e/transformed/runner-1.4.0/AndroidManifest.xml:26:9-58
+31-->[androidx.test:runner:1.4.0] /home/szilveszter/.gradle/caches/transforms-3/4b85a2f84e3f8416644fe2e347c4be9e/transformed/runner-1.4.0/AndroidManifest.xml:26:18-55
+32        <package android:name="com.google.android.apps.common.testing.services" />
+32-->[androidx.test:runner:1.4.0] /home/szilveszter/.gradle/caches/transforms-3/4b85a2f84e3f8416644fe2e347c4be9e/transformed/runner-1.4.0/AndroidManifest.xml:27:9-83
+32-->[androidx.test:runner:1.4.0] /home/szilveszter/.gradle/caches/transforms-3/4b85a2f84e3f8416644fe2e347c4be9e/transformed/runner-1.4.0/AndroidManifest.xml:27:18-80
+33    </queries>
+34
+35    <application
+35-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:5:5-24:19
+36        android:name="com.musify.MainApplication"
+36-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:6:7-38
+37        android:allowBackup="false"
+37-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:10:7-34
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+39        android:debuggable="true"
+40        android:extractNativeLibs="true"
+41        android:icon="@mipmap/ic_launcher"
+41-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:8:7-41
+42        android:label="@string/app_name"
+42-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:7:7-39
+43        android:roundIcon="@mipmap/ic_launcher_round"
+43-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:9:7-52
+44        android:theme="@style/AppTheme"
+44-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:11:7-38
+45        android:usesCleartextTraffic="true" >
+45-->/home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:6:9-44
+46        <activity
+46-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:12:7-23:18
+47            android:name="com.musify.MainActivity"
+47-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:13:9-37
+48            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+48-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:15:9-118
+49            android:exported="true"
+49-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:18:9-32
+50            android:label="@string/app_name"
+50-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:14:9-41
+51            android:launchMode="singleTask"
+51-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:16:9-40
+52            android:windowSoftInputMode="adjustResize" >
+52-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:17:9-51
+53            <intent-filter>
+53-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:19:9-22:25
+54                <action android:name="android.intent.action.MAIN" />
+54-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:20:13-65
+54-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:20:21-62
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:21:13-73
+56-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:21:23-70
+57            </intent-filter>
+58        </activity> <!-- The main service, handles playback, playlists and media buttons -->
+59        <service
+59-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-22:19
+60            android:name="com.doublesymmetry.trackplayer.service.MusicService"
+60-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-79
+61            android:enabled="true"
+61-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-35
+62            android:exported="true"
+62-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-36
+63            android:foregroundServiceType="mediaPlayback" >
+63-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-58
+64            <intent-filter>
+64-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-21:29
+65                <action android:name="android.intent.action.MEDIA_BUTTON" />
+65-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-77
+65-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:25-74
+66            </intent-filter>
+67        </service>
+68
+69        <activity
+69-->[com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:19:9-21:40
+70            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+70-->[com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:20:13-77
+71            android:exported="false" />
+71-->[com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:21:13-37
+72
+73        <provider
+73-->[androidx.emoji2:emoji2:1.2.0] /home/szilveszter/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+74            android:name="androidx.startup.InitializationProvider"
+74-->[androidx.emoji2:emoji2:1.2.0] /home/szilveszter/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+75            android:authorities="com.musify.androidx-startup"
+75-->[androidx.emoji2:emoji2:1.2.0] /home/szilveszter/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+76            android:exported="false" >
+76-->[androidx.emoji2:emoji2:1.2.0] /home/szilveszter/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+77            <meta-data
+77-->[androidx.emoji2:emoji2:1.2.0] /home/szilveszter/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+78                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+78-->[androidx.emoji2:emoji2:1.2.0] /home/szilveszter/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+79                android:value="androidx.startup" />
+79-->[androidx.emoji2:emoji2:1.2.0] /home/szilveszter/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+80            <meta-data
+80-->[androidx.lifecycle:lifecycle-process:2.5.1] /home/szilveszter/.gradle/caches/transforms-3/d3b7d5859dc925d6c6e9cb951610d0af/transformed/jetified-lifecycle-process-2.5.1/AndroidManifest.xml:31:13-33:52
+81                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+81-->[androidx.lifecycle:lifecycle-process:2.5.1] /home/szilveszter/.gradle/caches/transforms-3/d3b7d5859dc925d6c6e9cb951610d0af/transformed/jetified-lifecycle-process-2.5.1/AndroidManifest.xml:32:17-78
+82                android:value="androidx.startup" />
+82-->[androidx.lifecycle:lifecycle-process:2.5.1] /home/szilveszter/.gradle/caches/transforms-3/d3b7d5859dc925d6c6e9cb951610d0af/transformed/jetified-lifecycle-process-2.5.1/AndroidManifest.xml:33:17-49
+83        </provider>
+84
+85        <meta-data
+85-->[com.facebook.soloader:soloader:0.10.5] /home/szilveszter/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:12:9-14:37
+86            android:name="com.facebook.soloader.enabled"
+86-->[com.facebook.soloader:soloader:0.10.5] /home/szilveszter/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:13:13-57
+87            android:value="false" />
+87-->[com.facebook.soloader:soloader:0.10.5] /home/szilveszter/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:14:13-34
+88    </application>
+89
+90</manifest>

@@ -21,6 +21,8 @@ import com.swmansion.rnscreens.RNScreensPackage;
 import com.horcrux.svg.SvgPackage;
 // react-native-track-player
 import com.doublesymmetry.trackplayer.TrackPlayer;
+// react-native-vector-icons
+import com.oblador.vectoricons.VectorIconsPackage;
 
 public class PackageList {
   private Application application;
@@ -70,7 +72,8 @@ public class PackageList {
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new SvgPackage(),
-      new TrackPlayer()
+      new TrackPlayer(),
+      new VectorIconsPackage()
     ));
   }
 }

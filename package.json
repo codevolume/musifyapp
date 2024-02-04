@@ -22,6 +22,7 @@
     "react-native-svg": "^14.1.0",
     "react-native-swipe-gestures": "^1.0.5",
     "react-native-track-player": "^4.0.1",
+    "react-native-vector-icons": "^10.0.3",
     "react-native-virtualized-view": "^1.0.0"
   },
   "devDependencies": {

@@ -1,15 +1,19 @@
 import { View, Text, TouchableOpacity, Modal, Image, SafeAreaView, ImageBackground, Animated } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Svg, { Path } from "react-native-svg";
 import GestureRecognizer from "react-native-swipe-gestures";
+import { ThemeContext } from "../contexts/ThemeContext";
+
 
 const PlayerModal = ({ modalVisible, setModalVisible, songInfos }) => {
+    const { theme } = useContext(ThemeContext);
+    let activeColors = Colors[theme.mode];
+
     return (
-        <GestureRecognizer style={{flex: 1}} onSwipeDown={() => setModalVisible(false)}>
-            <Modal visible={modalVisible} animationType="slide" presentationStyle="fullScreen">
-                <Animated.View style={{ flex: 1, backgroundColor: "#000" }}>
-                    <ImageBackground source={{ uri: songInfos?.coverPhoto?.url }} resizeMode="cover" blurRadius={50} imageStyle={{ opacity: 0.2 }}>
+        <GestureRecognizer style={{ flex: 1 }} onSwipeDown={() => setModalVisible(false)}>
+            <Modal visible={modalVisible} animationType="slide" presentationStyle="fullScreen" statusBarTranslucent={true} style={{ flex: 1 }}>
+                <Animated.View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
                         <StatusBar style="light" />
                         <SafeAreaView>
                             <View style={{ paddingHorizontal: 25, paddingTop: 20 }}>
@@ -22,8 +26,8 @@ const PlayerModal = ({ modalVisible, setModalVisible, songInfos }) => {
                             <View style={{ paddingHorizontal: 25, justifyContent: "center", height: "100%", paddingBottom: 200 }}>
                                 <Image source={{ uri: songInfos?.coverPhoto?.url }} style={{ width: "100%", borderRadius: 6, height: 360 }} resizeMode="cover" />
                                 <View style={{ paddingTop: 20, gap: 10 }}>
-                                    <Text style={{ fontSize: 24, fontWeight: "bold", color: "#fff" }}>{songInfos?.title}</Text>
-                                    <Text style={{ fontSize: 16, color: "#b4b4b4" }}>{songInfos?.author}</Text>
+                                    <Text style={{ fontSize: 24, fontWeight: "bold", color: activeColors.hue12 }}>{songInfos?.title}</Text>
+                                    <Text style={{ fontSize: 16, color: activeColors.hue11 }}>{songInfos?.author}</Text>
                                 </View>
 
                                 <View style={{ width: "100%", flexDirection: "row", justifyContent: "space-between", paddingTop: 20 }}>
@@ -73,7 +77,6 @@ const PlayerModal = ({ modalVisible, setModalVisible, songInfos }) => {
                                 </View>
                             </View>
                         </SafeAreaView>
-                    </ImageBackground>
                 </Animated.View>
             </Modal>
         </GestureRecognizer>

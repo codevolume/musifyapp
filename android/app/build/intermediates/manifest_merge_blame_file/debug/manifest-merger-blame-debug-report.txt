@@ -9,17 +9,17 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:3:5-67
-11-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:3:22-64
+11-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:3:5-67
+11-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:3:22-64
 12    <uses-permission android:name="android.permission.WAKE_LOCK" />
-12-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-68
-12-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-65
+12-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-68
+12-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-65
 13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-13-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
-13-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-74
+13-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
+13-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-74
 14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
-14-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-92
-14-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-89
+14-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-92
+14-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-89
 15    <!--
 16    This manifest file is used only by Gradle to configure debug-only capabilities
 17    for React Native Apps.
@@ -59,65 +59,65 @@
 33    </queries>
 34
 35    <application
-35-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:5:5-24:19
+35-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:5:5-24:19
 36        android:name="com.musify.MainApplication"
-36-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:6:7-38
+36-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:6:7-38
 37        android:allowBackup="false"
-37-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:10:7-34
+37-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:10:7-34
 38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 38-->[androidx.core:core:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 39        android:debuggable="true"
 40        android:extractNativeLibs="true"
 41        android:icon="@mipmap/ic_launcher"
-41-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:8:7-41
+41-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:8:7-41
 42        android:label="@string/app_name"
-42-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:7:7-39
+42-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:7:7-39
 43        android:roundIcon="@mipmap/ic_launcher_round"
-43-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:9:7-52
+43-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:9:7-52
 44        android:theme="@style/AppTheme"
-44-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:11:7-38
+44-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:11:7-38
 45        android:usesCleartextTraffic="true" >
-45-->/home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:6:9-44
+45-->/home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:6:9-44
 46        <activity
-46-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:12:7-23:18
+46-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:12:7-23:18
 47            android:name="com.musify.MainActivity"
-47-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:13:9-37
+47-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:13:9-37
 48            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-48-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:15:9-118
+48-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:15:9-118
 49            android:exported="true"
-49-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:18:9-32
+49-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:18:9-32
 50            android:label="@string/app_name"
-50-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:14:9-41
+50-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:14:9-41
 51            android:launchMode="singleTask"
-51-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:16:9-40
+51-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:16:9-40
 52            android:windowSoftInputMode="adjustResize" >
-52-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:17:9-51
+52-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:17:9-51
 53            <intent-filter>
-53-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:19:9-22:25
+53-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:19:9-22:25
 54                <action android:name="android.intent.action.MAIN" />
-54-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:20:13-65
-54-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:20:21-62
+54-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:20:13-65
+54-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:20:21-62
 55
 56                <category android:name="android.intent.category.LAUNCHER" />
-56-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:21:13-73
-56-->/home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:21:23-70
+56-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:21:13-73
+56-->/home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:21:23-70
 57            </intent-filter>
 58        </activity> <!-- The main service, handles playback, playlists and media buttons -->
 59        <service
-59-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-22:19
+59-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-22:19
 60            android:name="com.doublesymmetry.trackplayer.service.MusicService"
-60-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-79
+60-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-79
 61            android:enabled="true"
-61-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-35
+61-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-35
 62            android:exported="true"
-62-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-36
+62-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-36
 63            android:foregroundServiceType="mediaPlayback" >
-63-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-58
+63-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-58
 64            <intent-filter>
-64-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-21:29
+64-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-21:29
 65                <action android:name="android.intent.action.MEDIA_BUTTON" />
-65-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-77
-65-->[:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:25-74
+65-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-77
+65-->[:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:25-74
 66            </intent-filter>
 67        </service>
 68

@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Text, FlatList, Platform, TouchableOpacity, RefreshControl } from "react-native";
+import { SafeAreaView, View, Text, FlatList, RefreshControl } from "react-native";
 import { ScrollView } from "react-native-virtualized-view";
 import { Player } from "../contexts/PlayerContext";
 import React, { useContext, useEffect, useState } from "react";
@@ -8,9 +8,7 @@ import Colors from "../constans/Colors";
 import { ThemeContext } from "../contexts/ThemeContext";
 import Profile from "../components/Profile";
 
-
 const HomeScreen = () => {
-    const [settingModal, setSettingModal] = useState(false);
     const [refresh, setRefresh] = useState(false);
     const [dataHolder, setDataHolder] = useState([]);
 
@@ -42,20 +40,20 @@ const HomeScreen = () => {
 
         setTimeout(() => {
             setRefresh(false);
-        }, 4000);
+        }, 500);
     };
 
     return (
         <>
             <View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
-                <SafeAreaView>
-                    <View style={{ flexDirection: "row", width: "100%", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center", paddingVertical: 15, paddingTop: Platform.OS === "android" ? 35 : null }}>
+                <SafeAreaView style={{flex: 1}}>
+                    <View style={{ flexDirection: "row", width: "100%", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center", paddingVertical: 15 }}>
                         <Text style={{ fontSize: 24, fontWeight: "bold", color: activeColors.hue12 }}>Good Afternoon!</Text>
                         <Profile />
                     </View>
 
-                    <View style={{ height: "100%", backgroundColor: activeColors.hue1 }}>
-                        <ScrollView style={{ flex: 1, marginBottom: currentTrack ? 275 : 200 }} showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refresh} onRefresh={() => pullDown} tintColor={activeColors.hue12} />}>
+                    <View style={{ height: "100%", backgroundColor: activeColors.hue1, flexGrow: 1 }}>
+                        <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refresh} onRefresh={() => pullDown()} tintColor={activeColors.hue12} />}>
                             <View style={{ paddingTop: 25, gap: 16 }}>
                                 <FlatList contentContainerStyle={{ paddingHorizontal: 25 }} horizontal={true} showsHorizontalScrollIndicator={false} data={category} renderItem={({ item }) => <CategoryItem item={item} />} />
                             </View>
@@ -70,7 +68,7 @@ const HomeScreen = () => {
                                 <View style={{ paddingBottom: 18 }}>
                                     <Text style={{ fontSize: 20, color: activeColors.hue12, fontWeight: "bold", paddingHorizontal: 15 }}>For You</Text>
                                 </View>
-                                <FlatList showsHorizontalScrollIndicator={false} data={Data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => <Item item={item} isPlaying={item === currentTrack} />} />
+                                <FlatList showsHorizontalScrollIndicator={false} data={Data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => <Item item={item} /* isPlaying={item === currentTrack} */ />} />
                             </View>
                         </ScrollView>
                     </View>

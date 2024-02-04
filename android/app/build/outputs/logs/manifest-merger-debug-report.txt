@@ -1,16 +1,17 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:1:1-25:12
-MERGED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:1:1-25:12
-INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:2:1-9:12
-INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:2:1-9:12
-INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:2:1-9:12
+ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:1:1-25:12
+MERGED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:1:1-25:12
+INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:2:1-9:12
+INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:2:1-9:12
+INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:flipper-integration:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/05ec83e5cef9923925a20a8b4150b312/transformed/jetified-flipper-integration-0.73.3-debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-async-storage_async-storage] /home/szilveszter/Asztal/musify/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-safe-area-context] /home/szilveszter/Asztal/musify/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-screens] /home/szilveszter/Asztal/musify/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-svg] /home/szilveszter/Asztal/musify/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-25:12
+MERGED from [:react-native-async-storage_async-storage] /home/szilveszter/Asztal/musifyapp/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-safe-area-context] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-screens] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-svg] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-25:12
+MERGED from [:react-native-vector-icons] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:2:1-24:12
 MERGED from [com.facebook.fresco:flipper-fresco-plugin:3.1.3] /home/szilveszter/.gradle/caches/transforms-3/2b5ba21ddda073e33e012f0d689623c6/transformed/jetified-flipper-fresco-plugin-3.1.3/AndroidManifest.xml:8:1-13:12
 MERGED from [com.facebook.fresco:flipper:3.1.3] /home/szilveszter/.gradle/caches/transforms-3/78a2f7f2f5ffb04c17532765310fabea/transformed/jetified-flipper-3.1.3/AndroidManifest.xml:2:1-7:12
@@ -107,28 +108,28 @@ MERGED from [com.facebook.soloader:soloader:0.10.5] /home/szilveszter/.gradle/ca
 MERGED from [com.android.ndk.thirdparty:openssl:1.1.1l-beta-1] /home/szilveszter/.gradle/caches/transforms-3/9293682cb53936b0e929c86eac194797/transformed/jetified-openssl-1.1.1l-beta-1/AndroidManifest.xml:1:1-3:12
 MERGED from [androidx.multidex:multidex:2.0.1] /home/szilveszter/.gradle/caches/transforms-3/a08832ab09cb9d88bd7e1341061fab5d/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
 	package
-		INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:3:5-51
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:3:5-67
+ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:3:5-67
 MERGED from [com.facebook.flipper:flipper:0.201.0] /home/szilveszter/.gradle/caches/transforms-3/9b2c28bd5719adb7e465469e2ca76c12/transformed/jetified-flipper-0.201.0/AndroidManifest.xml:13:5-67
 MERGED from [com.facebook.flipper:flipper:0.201.0] /home/szilveszter/.gradle/caches/transforms-3/9b2c28bd5719adb7e465469e2ca76c12/transformed/jetified-flipper-0.201.0/AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:3:22-64
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:3:22-64
 application
-ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:5:5-24:19
-MERGED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:5:5-24:19
-MERGED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:5:5-24:19
-INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:5:5-8:50
-MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-23:19
-MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-23:19
+ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:5:5-24:19
+INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:5:5-8:50
+MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-23:19
+MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-23:19
 MERGED from [com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:18:5-22:19
 MERGED from [com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:18:5-22:19
 MERGED from [com.google.android.material:material:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/d3a8a24834f295d8078f18b8298041f7/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
@@ -154,73 +155,75 @@ MERGED from [com.jakewharton.timber:timber:5.0.1] /home/szilveszter/.gradle/cach
 MERGED from [com.facebook.soloader:soloader:0.10.5] /home/szilveszter/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:11:5-15:19
 MERGED from [com.facebook.soloader:soloader:0.10.5] /home/szilveszter/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:11:5-15:19
 	android:extractNativeLibs
-		INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /home/szilveszter/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:7:7-39
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:7:7-39
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:7:7-39
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:7:7-39
 	tools:ignore
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:8:9-48
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:8:9-48
 	android:roundIcon
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:9:7-52
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:9:7-52
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:9:7-52
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:9:7-52
 	tools:targetApi
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:7:9-29
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:7:9-29
 	android:icon
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:8:7-41
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:8:7-41
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:8:7-41
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:8:7-41
 	android:allowBackup
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:10:7-34
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:10:7-34
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:10:7-34
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:10:7-34
 	android:theme
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:11:7-38
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:11:7-38
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:11:7-38
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:11:7-38
 	android:usesCleartextTraffic
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml:6:9-44
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml:6:9-44
 	android:name
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:6:7-38
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:6:7-38
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:6:7-38
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:6:7-38
 activity#com.musify.MainActivity
-ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:12:7-23:18
+ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:12:7-23:18
 	android:label
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:14:9-41
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:14:9-41
 	android:launchMode
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:16:9-40
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:16:9-40
 	android:windowSoftInputMode
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:17:9-51
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:17:9-51
 	android:exported
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:18:9-32
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:18:9-32
 	android:configChanges
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:15:9-118
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:15:9-118
 	android:name
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:13:9-37
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:13:9-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:19:9-22:25
+ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:19:9-22:25
 action#android.intent.action.MAIN
-ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:20:13-65
+ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:20:13-65
 	android:name
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:20:21-62
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:20:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:21:13-73
+ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:21:13-73
 	android:name
-		ADDED from /home/szilveszter/Asztal/musify/android/app/src/main/AndroidManifest.xml:21:23-70
+		ADDED from /home/szilveszter/Asztal/musifyapp/android/app/src/main/AndroidManifest.xml:21:23-70
 uses-sdk
-INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml
-INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml
 MERGED from [com.facebook.react:flipper-integration:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/05ec83e5cef9923925a20a8b4150b312/transformed/jetified-flipper-integration-0.73.3-debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:flipper-integration:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/05ec83e5cef9923925a20a8b4150b312/transformed/jetified-flipper-integration-0.73.3-debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-async-storage_async-storage] /home/szilveszter/Asztal/musify/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-async-storage_async-storage] /home/szilveszter/Asztal/musify/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-safe-area-context] /home/szilveszter/Asztal/musify/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-safe-area-context] /home/szilveszter/Asztal/musify/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-screens] /home/szilveszter/Asztal/musify/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-screens] /home/szilveszter/Asztal/musify/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-svg] /home/szilveszter/Asztal/musify/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-svg] /home/szilveszter/Asztal/musify/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-async-storage_async-storage] /home/szilveszter/Asztal/musifyapp/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-async-storage_async-storage] /home/szilveszter/Asztal/musifyapp/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-safe-area-context] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-safe-area-context] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-screens] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-screens] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-svg] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-svg] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-vector-icons] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-vector-icons] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:10:5-44
 MERGED from [com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:10:5-44
 MERGED from [com.facebook.fresco:flipper-fresco-plugin:3.1.3] /home/szilveszter/.gradle/caches/transforms-3/2b5ba21ddda073e33e012f0d689623c6/transformed/jetified-flipper-fresco-plugin-3.1.3/AndroidManifest.xml:11:5-44
@@ -412,37 +415,37 @@ MERGED from [com.android.ndk.thirdparty:openssl:1.1.1l-beta-1] /home/szilveszter
 MERGED from [androidx.multidex:multidex:2.0.1] /home/szilveszter/.gradle/caches/transforms-3/a08832ab09cb9d88bd7e1341061fab5d/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.1] /home/szilveszter/.gradle/caches/transforms-3/a08832ab09cb9d88bd7e1341061fab5d/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
-		INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/szilveszter/Asztal/musify/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/szilveszter/Asztal/musifyapp/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-68
+ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-68
 	android:name
-		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-65
+		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-65
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
+ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
 	android:name
-		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-74
+		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-74
 uses-permission#android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
-ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-92
+ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-92
 	android:name
-		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-89
+		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-89
 service#com.doublesymmetry.trackplayer.service.MusicService
-ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-22:19
+ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-22:19
 	android:enabled
-		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-35
+		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-35
 	android:exported
-		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-36
+		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-36
 	android:foregroundServiceType
-		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-58
+		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-58
 	android:name
-		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-79
+		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-79
 intent-filter#action:name:android.intent.action.MEDIA_BUTTON
-ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-21:29
+ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-21:29
 action#android.intent.action.MEDIA_BUTTON
-ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-77
+ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musify/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:25-74
+		ADDED from [:react-native-track-player] /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:25-74
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from [com.facebook.react:react-android:0.73.3] /home/szilveszter/.gradle/caches/transforms-3/ff34738e7fb960ce73fd0d6cf687f2a8/transformed/jetified-react-android-0.73.3-debug/AndroidManifest.xml:16:5-78
 	android:name

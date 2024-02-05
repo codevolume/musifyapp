@@ -45,30 +45,30 @@ const HomeScreen = () => {
 
     return (
         <>
-            <View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
+            <View style={{ flex: 1, backgroundColor: activeColors.primary }}>
                 <SafeAreaView style={{flex: 1}}>
                     <View style={{ flexDirection: "row", width: "100%", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center", paddingVertical: 15 }}>
-                        <Text style={{ fontSize: 24, fontWeight: "bold", color: activeColors.hue12 }}>Good Afternoon!</Text>
+                        <Text style={{ fontSize: 24, fontWeight: "bold", color: activeColors.tint }}>Good Afternoon!</Text>
                         <Profile />
                     </View>
 
-                    <View style={{ height: "100%", backgroundColor: activeColors.hue1, flexGrow: 1 }}>
-                        <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refresh} onRefresh={() => pullDown()} tintColor={activeColors.hue12} />}>
+                    <View style={{ height: "100%", backgroundColor: activeColors.primary, flexGrow: 1 }}>
+                        <ScrollView style={{ flex: 1, marginBottom: 80 }} showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refresh} onRefresh={() => pullDown()} tintColor={activeColors.tint} />}>
                             <View style={{ paddingTop: 25, gap: 16 }}>
                                 <FlatList contentContainerStyle={{ paddingHorizontal: 25 }} horizontal={true} showsHorizontalScrollIndicator={false} data={category} renderItem={({ item }) => <CategoryItem item={item} />} />
                             </View>
                             <View style={{ paddingTop: 35, paddingHorizontal: 10 }}>
                                 <View style={{ paddingBottom: 18 }}>
-                                    <Text style={{ fontSize: 20, color: activeColors.hue12, fontWeight: "bold", paddingHorizontal: 15 }}>Quick Play</Text>
+                                    <Text style={{ fontSize: 20, color: activeColors.tint, fontWeight: "bold", paddingHorizontal: 15 }}>Quick Play</Text>
                                 </View>
 
                                 <FlatList horizontal data={dataHolder} keyExtractor={(item, index) => index.toString()} renderItem={({ item: row }) => <MultiRowFlatlist row={row} />} />
                             </View>
                             <View style={{ paddingTop: 35, paddingHorizontal: 10 }}>
                                 <View style={{ paddingBottom: 18 }}>
-                                    <Text style={{ fontSize: 20, color: activeColors.hue12, fontWeight: "bold", paddingHorizontal: 15 }}>For You</Text>
+                                    <Text style={{ fontSize: 20, color: activeColors.tint, fontWeight: "bold", paddingHorizontal: 15 }}>For You</Text>
                                 </View>
-                                <FlatList showsHorizontalScrollIndicator={false} data={Data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => <Item item={item} /* isPlaying={item === currentTrack} */ />} />
+                                <FlatList showsHorizontalScrollIndicator={false} data={Data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => <Item item={item} isPlaying={item === currentTrack} />} />
                             </View>
                         </ScrollView>
                     </View>

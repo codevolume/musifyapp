@@ -50,3 +50,4 @@ com.musify.app-packaged_res-48 /home/szilveszter/Asztal/musifyapp/node_modules/r
 com.musify.app-packaged_res-49 /home/szilveszter/Asztal/musifyapp/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
 com.musify.app-packaged_res-50 /home/szilveszter/Asztal/musifyapp/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
 com.musify.app-packaged_res-51 /home/szilveszter/Asztal/musifyapp/node_modules/react-native-track-player/android/build/intermediates/packaged_res/debug
+com.musify.app-packaged_res-52 /home/szilveszter/Asztal/musifyapp/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug

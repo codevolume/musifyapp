@@ -53,17 +53,17 @@ const SearchScreen = () => {
     };
 
     return (
-        <View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
+        <View style={{ flex: 1, backgroundColor: activeColors.primary }}>
             <SafeAreaView>
                 <View style={{ flexDirection: "row", width: "100%", justifyContent: "space-between", paddingHorizontal: 25, paddingVertical: 15, alignItems: "center", gap: 20 }}>
-                    <View style={{ paddingHorizontal: 20, height: 48, flexDirection: "row", gap: 14, alignItems: "center", backgroundColor: activeColors.hue4, width: "80%", borderRadius: 50 }}>
-                        <Icons name={"explore"} size={20} color={activeColors.hue9}/>
-                        <TextInput placeholder="Search for something..." onChangeText={searchSuggest} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.hue11 }} placeholderTextColor={activeColors.hue9}/>
+                    <View style={{ paddingHorizontal: 20, height: 48, flexDirection: "row", gap: 14, alignItems: "center", backgroundColor: activeColors.secondary, width: "80%", borderRadius: 50 }}>
+                        <Icons name={"search"} size={20} color={activeColors.tertiary}/>
+                        <TextInput placeholder="Search for something..." onChangeText={searchSuggest} onSubmitEditing={submitSearch} style={{ fontSize: 16, color: activeColors.tint }} placeholderTextColor={activeColors.tertiary}/>
                     </View>
 
                     <Profile />
                 </View>
-                <View style={{ height: "100%", backgroundColor: activeColors.hue1, paddingHorizontal: 10 }}>{ keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: activeColors.hue12 }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}</View>
+                <View style={{ height: "100%", paddingHorizontal: 10 }}>{ keyboardStatus ? <FlatList data={suggestions} renderItem={({ item }) => <SearchItem item={item} />} /> : isLoading ? <ActivityIndicator size="large" style={{ paddingTop: 40 }} /> : errorMessage ? <Text style={{ color: activeColors.hue12 }}>{errorMessage}</Text> : <Test item={searchResult.shelves} />}</View>
             </SafeAreaView>
         </View>
     );

@@ -39,12 +39,14 @@ export default function MainContainer() {
 
                         return <Icons name={iconName} size={size} color={color} />;
                     },
-                    tabBarActiveTintColor: activeColors.hue12,
+                    tabBarActiveTintColor: activeColors.tint,
+                    tabBarActiveBackgroundColor: activeColors.primary,
+                    tabBarInactiveBackgroundColor: activeColors.primary,
                     tabBarHideOnKeyboard: true,
                     headerShown: false,
                     tabBarStyle: {
-                        height: 60
-                    }
+                        height: 60,
+                    },
                 })}
             >
                 <Tab.Screen name={homeName} component={HomeScreen} />

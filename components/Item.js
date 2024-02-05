@@ -27,8 +27,8 @@ const Item = ({ item }) => {
                         </View>
                     )}
                     <View>
-                        <Text style={{ fontSize: 16, fontWeight: "500", color: isCurrentTrack ? "green"  : activeColors.hue12 }}>{item.title}</Text>
-                        <Text style={{ fontSize: 12, color: activeColors.hue11 }}>{item.subtitle}</Text>
+                        <Text style={{ fontSize: 16, fontWeight: "500", color: isCurrentTrack ? "green"  : activeColors.tint }}>{item.title}</Text>
+                        <Text style={{ fontSize: 12, color: activeColors.tertiary }}>{item.subtitle}</Text>
                     </View>
                     {isCurrentTrack ? <Image source={require("../assets/eq.gif")} style={{ height: 20, width: 20 }} /> : null}
                 </View>

@@ -29,7 +29,7 @@ const ProfileModal = () => {
     return (
         <View>
             <Modal visible={settingsModal} onRequestClose={() => setSettingsModal(false)} animationType="slide" presentationStyle="fullScreen">
-                <View style={{ flex: 1, backgroundColor: activeColors.hue1 }}>
+                <View style={{ flex: 1, backgroundColor: activeColors.primary }}>
                     <SafeAreaView>
                         <View style={{ alignItems: "flex-end", paddingHorizontal: 25, paddingTop: 20 }}>
                             <Pressable onPress={() => setSettingsModal(false)}>
@@ -43,21 +43,21 @@ const ProfileModal = () => {
                             <View style={{ backgroundColor: "#0b3b2c", width: 72, height: 72, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>
                                 <Text style={{ fontSize: 24, fontWeight: "bold", color: "#1fd8a4" }}>Sz</Text>
                             </View>
-                            <Text style={{ fontSize: 24, fontWeight: "bold", color: activeColors.hue12, paddingTop: 20 }}>Szilveszter</Text>
+                            <Text style={{ fontSize: 24, fontWeight: "bold", color: activeColors.tint, paddingTop: 20 }}>Szilveszter</Text>
                         </View>
 
                         <View style={{ paddingHorizontal: 25, paddingTop: 40, gap: 35 }}>
                             <View style={{ gap: 18 }}>
-                                <Text style={{ fontSize: 20, fontWeight: "bold", color: activeColors.hue12 }}>Megjelenés</Text>
+                                <Text style={{ fontSize: 20, fontWeight: "bold", color: activeColors.tertiary }}>Megjelenés</Text>
                                 <View style={{ gap: 18 }}>
                                     <Pressable>
-                                        <View style={{ backgroundColor: activeColors.hue4, width: "100%", paddingVertical: 16, paddingHorizontal: 16, borderRadius: 6, flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <View style={{ backgroundColor: activeColors.secondary, width: "100%", paddingVertical: 16, paddingHorizontal: 16, borderRadius: 6, flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                             <View style={{flexDirection: "row", alignItems: "center", gap: 10}}>
                                                 <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <Circle cx="12" cy="12" r="9" stroke={activeColors.hue12} stroke-width="2" />
-                                                    <Path d="M18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12C3 14.3869 3.94821 16.6761 5.63604 18.364L12 12L18.364 5.63604Z" fill={activeColors.hue12} />
+                                                    <Circle cx="12" cy="12" r="9" stroke={activeColors.tint} stroke-width="2" />
+                                                    <Path d="M18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12C3 14.3869 3.94821 16.6761 5.63604 18.364L12 12L18.364 5.63604Z" fill={activeColors.tint} />
                                                 </Svg>
-                                                <Text style={{ fontSize: 16, fontWeight: "bold", color: activeColors.hue12 }}>Sötétmód</Text>
+                                                <Text style={{ fontSize: 16, fontWeight: "bold", color: activeColors.tint }}>Sötétmód</Text>
                                             </View>
                                             <Switch value={value} onValueChange={toggleSwitch} />
                                         </View>
